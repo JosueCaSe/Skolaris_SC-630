@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!-- Primary Meta Tags -->
-  <title>Skolaris - Soporte Tecnico</title>
+  <title>Skolaris</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="title" content="Skolaris">
   <meta name="author" content="Skolaris">
 
- <!-- Favicon -->
- <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon/apple-touch-icon.png">
- <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
- <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
- <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
- <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
- <meta name="msapplication-TileColor" content="#ffffff">
- <meta name="theme-color" content="#ffffff">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- Sweet Alert -->
   <link type="text/css" href="../vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
@@ -25,14 +25,13 @@
   <!-- Volt CSS -->
   <link type="text/css" href="../css/volt.css" rel="stylesheet">
 
- 
 </head>
 
 <body>
   <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
     <a class="navbar-brand me-lg-5" href="index.html">
-      <img class="navbar-brand-dark" src="../assets/img/brand/light.svg" alt="Volt logo" /> <img class="navbar-brand-light"
-        src="../assets/img/brand/dark.svg" alt="Volt logo" />
+      <img class="navbar-brand-dark" src="../assets/img/brand/light.svg" alt="Volt logo" /> <img
+        class="navbar-brand-light" src="../assets/img/brand/dark.svg" alt="Volt logo" />
     </a>
     <div class="d-flex align-items-center">
       <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
@@ -382,7 +381,6 @@
   </nav>
 
   <main class="content">
-
     <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
       <div class="container-fluid px-0">
         <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -440,121 +438,55 @@
       </div>
     </nav>
 
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-      <div class="d-block mb-4 mb-md-0">
-        <h1 class="h4">Soporte Tecnico</h1>
-        <p class="mb-0">Complete el formulario para recibir asistencia tecnica</p>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 shadow">
+          <div class="card-header">
+            <h3 class="fs-5 fw-bold mb-0">ASISTENCIA - DOCENTE</h3>
+          </div>
+          <div class="card-body">
+            <p>CONTENIDO</p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+            <p> +++ </p>
+
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12 col-xl-8">
-
-        <!-- Todo lo del formulario   -->
-        <div class="card card-body border-0 shadow mb-4">
-          <div class="card-header support-header">
-            <h2 class="h5 mb-0">Formulario de Soporte Tecnico</h2>
-          </div>
-          <div class="card-body">
-            <form id="supportForm">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="nombre" class="form-label required-field">Nombre completo</label>
-                  <input class="form-control" id="nombre" type="text" placeholder="Ingrese su nombre completo" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="email" class="form-label required-field">Correo electrónico</label>
-                  <input class="form-control" id="email" type="email" placeholder="ejemplo@dominio.com" required>
-                </div>
-              </div>
-              
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="telefono" class="form-label">Telefono</label>
-                  <input class="form-control" id="telefono" type="tel" placeholder="Número de contacto">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="asunto" class="form-label required-field">Tipo de problema</label>
-                  <select class="form-select" id="asunto" required>
-                    <option value="" selected disabled>Seleccione una opcion</option>
-                    <option value="Modulo">Problema en un modulo</option>
-                    <option value="WEB">Problema en la web</option>
-                    <option value="cuenta">Cuenta de usuario</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div class="mb-3">
-                <label for="titulo" class="form-label required-field">Título del problema</label>
-                <input class="form-control" id="titulo" type="text" placeholder="Describa brevemente el problema" required>
-              </div>
-              
-              <div class="mb-3">
-                <label for="descripcion" class="form-label required-field">Descripción detallada</label>
-                <textarea class="form-control" id="descripcion" rows="6" placeholder="Describa con el mayor detalle posible el problema que está experimentando..." required></textarea>
-                <div class="form-text">Incluya pasos para reproducir el problema, mensajes de error y cualquier información relevante.</div>
-              </div>
-              
-              <div class="mb-3">
-                <label for="archivos" class="form-label">Adjuntar archivos</label>
-                <input class="form-control" type="file" id="archivos" multiple>
-                <div class="form-text">Puede adjuntar capturas de pantalla, documentos o archivos relacionados (máx. 5MB)</div>
-              </div>
-              
-              <div class="mt-3">
-                <button class="btn btn-primary mt-2 animate-up-2" type="submit">Enviar solicitud</button>
-                <button class="btn btn-gray-200 mt-2 animate-up-2 ms-2" type="reset">Cancelar</button>
-              </div>
-            </form>
-          </div>
+    <!-- Soporte Técnico -->
+    <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+      <div class="card-body bg-gray-800 text-white pt-4">
+        <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
+          href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="m-0 mb-1 me-4 fs-7">Soporte Técnico</p>
         </div>
+        <a href="soporte.html"
+          class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
+          Contactar Soporte
+          <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
       </div>
-      
-      <div class="col-12 col-xl-4">
-        <div class="card card-body border-0 shadow mb-4">
-          <div class="card-header support-header">
-            <h2 class="h5 mb-0">Otras formas de contacto</h2>
-          </div>
-          <div class="card-body">
-            <div class="row">
-
-              <!-- Contacto tel -->
-              <div class="col-12 mb-4">
-                <div class="card contact-method h-100">
-                  <div class="card-body text-center">
-                    <div class="icon icon-shape icon-lg bg-primary text-white rounded-circle mb-3">
-                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                      </svg>
-                    </div>
-                    <h3 class="h5">Soporte telefónico</h3>
-                    <p class="mb-1">+506 1234-5678</p>
-                    <small class="text-muted">Lunes a Viernes, 8:00 AM - 5:00 PM</small>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Contacto por correo -->
-              <div class="col-12 mb-4">
-                <div class="card contact-method h-100">
-                  <div class="card-body text-center">
-                    <div class="icon icon-shape icon-lg bg-primary text-white rounded-circle mb-3">
-                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                      </svg>
-                    </div>
-                    <h3 class="h5">Correo electrónico</h3>
-                    <p class="mb-1">soporte@skolaris.com</p>
-                  </div>
-                </div>
-              </div>
-                           
-            </div>
-          </div>
-        </div>
-  
+    </div>
+    <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
+      <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
+        <span class="fw-bold d-inline-flex align-items-center h6">
+          Soporte Técnico
+        </span>
       </div>
     </div>
 
@@ -588,38 +520,42 @@
 
   <!-- Vendor JS -->
   <script src="../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+
+  <!-- Slider -->
+  <script src="../vendor/vendor/nouislider/distribute/nouislider.min.js"></script>
+
+  <!-- Smooth scroll -->
   <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+  <!-- Charts -->
+  <script src="../vendor/chartist/dist/chartist.min.js"></script>
+  <script src="../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+  <!-- Datepicker -->
+  <script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+  <!-- Sweet Alerts 2 -->
   <script src="../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Moment JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+  <!-- Vanilla JS Datepicker -->
+  <script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+  <!-- Notyf -->
   <script src="../vendor/notyf/notyf.min.js"></script>
+
+  <!-- Simplebar -->
   <script src="../vendor/simplebar/dist/simplebar.min.js"></script>
+
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
 
-  <script>
-    //envio formulario de soporte
-    document.getElementById('supportForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      Swal.fire({
-        title: '¡Solicitud enviada!',
-        html: `
-          <div class="alert alert-success">
-            <p class="mb-2">Hemos recibido tu solicitud de soporte con los siguientes datos:</p>
-            <ul class="text-start">
-              <li><strong>Nombre:</strong> ${document.getElementById('nombre').value}</li>
-              <li><strong>Correo:</strong> ${document.getElementById('email').value}</li>
-              <li><strong>Tipo de problema:</strong> ${document.getElementById('asunto').options[document.getElementById('asunto').selectedIndex].text}</li>
-            </ul>
-            <p class="mt-2">Nos pondremos en contacto contigo a la brevedad.</p>
-          </div>
-        `,
-        icon: 'success',
-        confirmButtonText: 'Aceptar'
-      }).then(() => {
-        this.reset();
-      });
-    });
-  </script>
+
 </body>
+
 </html>
