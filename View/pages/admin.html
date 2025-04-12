@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!-- Primary Meta Tags -->
-  <title>Skolaris</title>
+  <title>Skolaris - Administración</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="title" content="Skolaris">
   <meta name="author" content="Skolaris">
@@ -81,7 +81,7 @@
             <span class="mt-1 ms-1 sidebar-text">Skolaris</span>
           </a>
         </li>
-        <li class="nav-item  active ">
+        <li class="nav-item">
           <a href="../index.html" class="nav-link">
             <span class="sidebar-icon">
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -438,26 +438,263 @@
       </div>
     </nav>
 
-
     <div class="row">
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">ADMIN</h3>
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="fs-5 fw-bold mb-0">Gestión de Usuarios</h3>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#crearUsuarioModal">
+                  <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                  </svg>
+                  Crear Usuario
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th class="border-bottom" scope="col">Cédula</th>
+                  <th class="border-bottom" scope="col">Nombre</th>
+                  <th class="border-bottom" scope="col">Apellido</th>
+                  <th class="border-bottom" scope="col">Correo Electrónico</th>
+                  <th class="border-bottom" scope="col">Roles</th>
+                  <th class="border-bottom" scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Usuario 1 -->
+                <tr>
+                  <td class="text-gray-900">1-2345-6789</td>
+                  <td class="fw-bold">Juan</td>
+                  <td class="fw-bold">Pérez</td>
+                  <td class="fw-bold">juan.perez@example.com</td>
+                  <td>
+                    <span class="badge bg-primary">Administrador</span>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                      Gestionar Roles
+                    </button>
+                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+                <!-- Usuario 2 -->
+                <tr>
+                  <td class="text-gray-900">2-3456-7890</td>
+                  <td class="fw-bold">María</td>
+                  <td class="fw-bold">González</td>
+                  <td class="fw-bold">maria.gonzalez@example.com</td>
+                  <td>
+                    <span class="badge bg-success">Docente</span>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                      Gestionar Roles
+                    </button>
+                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+                <!-- Usuario 3 -->
+                <tr>
+                  <td class="text-gray-900">3-4567-8901</td>
+                  <td class="fw-bold">Carlos</td>
+                  <td class="fw-bold">Rodríguez</td>
+                  <td class="fw-bold">carlos.rodriguez@example.com</td>
+                  <td>
+                    <span class="badge bg-warning">Estudiante</span>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                      Gestionar Roles
+                    </button>
+                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+                <!-- Usuario 4 -->
+                <tr>
+                  <td class="text-gray-900">4-5678-9012</td>
+                  <td class="fw-bold">Ana</td>
+                  <td class="fw-bold">Martínez</td>
+                  <td class="fw-bold">ana.martinez@example.com</td>
+                  <td>
+                    <span class="badge bg-success">Docente</span>
+                    <span class="badge bg-secondary">Tutor</span>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                      Gestionar Roles
+                    </button>
+                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+                <!-- Usuario 5 -->
+                <tr>
+                  <td class="text-gray-900">5-6789-0123</td>
+                  <td class="fw-bold">Luis</td>
+                  <td class="fw-bold">Hernández</td>
+                  <td class="fw-bold">luis.hernandez@example.com</td>
+                  <td>
+                    <span class="badge bg-warning">Estudiante</span>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                      Gestionar Roles
+                    </button>
+                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal Crear Usuario -->
+    <div class="modal fade" id="crearUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="crearUsuarioModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="crearUsuarioModalLabel">Crear Nuevo Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formCrearUsuario">
+              <div class="form-group mb-3">
+                <label for="cedula">Cédula</label>
+                <input type="text" class="form-control" id="cedula" placeholder="Ingrese la cédula">
+              </div>
+              <div class="form-group mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+              </div>
+              <div class="form-group mb-3">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido">
+              </div>
+              <div class="form-group mb-3">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese el correo electrónico">
+              </div>
+              <div class="form-group mb-3">
+                <label>Roles</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rolAdmin">
+                  <label class="form-check-label" for="rolAdmin">
+                    Administrador
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rolDocente">
+                  <label class="form-check-label" for="rolDocente">
+                    Docente
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rolEstudiante">
+                  <label class="form-check-label" for="rolEstudiante">
+                    Estudiante
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rolTutor">
+                  <label class="form-check-label" for="rolTutor">
+                    Tutor
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="btnConfirmarCrear">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Gestionar Roles -->
+    <div class="modal fade" id="gestionRolesModal" tabindex="-1" role="dialog" aria-labelledby="gestionRolesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gestionRolesModalLabel">Gestionar Roles de Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formGestionRoles">
+              <div class="mb-3">
+                <label class="form-label">Usuario: <strong>Juan Pérez (1-2345-6789)</strong></label>
+              </div>
+              <div class="form-group mb-3">
+                <label>Roles Actuales</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="editRolAdmin" checked>
+                  <label class="form-check-label" for="editRolAdmin">
+                    Administrador
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="editRolDocente">
+                  <label class="form-check-label" for="editRolDocente">
+                    Docente
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="editRolEstudiante">
+                  <label class="form-check-label" for="editRolEstudiante">
+                    Estudiante
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="editRolTutor">
+                  <label class="form-check-label" for="editRolTutor">
+                    Tutor
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+            <button type="button" class="btn btn-primary" id="btnConfirmarRoles">Confirmar Cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Eliminar Usuario -->
+    <div class="modal fade" id="eliminarUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eliminarUsuarioModalLabel">Eliminar Usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Estás seguro que deseas eliminar al usuario <strong>Juan Pérez (1-2345-6789)</strong>?</p>
+            <p class="text-danger">Esta acción no se puede deshacer.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="btnConfirmarEliminar">Confirmar Eliminación</button>
           </div>
         </div>
       </div>
@@ -555,7 +792,54 @@
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Confirmar creación de usuario
+      document.getElementById('btnConfirmarCrear').addEventListener('click', function() {
+        // Cerrar el modal
+        var crearUsuarioModal = bootstrap.Modal.getInstance(document.getElementById('crearUsuarioModal'));
+        crearUsuarioModal.hide();
+        
+        // Mostrar mensaje de confirmación
+        Swal.fire({
+          title: 'Usuario creado',
+          text: 'El usuario ha sido creado exitosamente.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
+      });
+
+      // Confirmar cambios de roles
+      document.getElementById('btnConfirmarRoles').addEventListener('click', function() {
+        // Cerrar el modal
+        var gestionRolesModal = bootstrap.Modal.getInstance(document.getElementById('gestionRolesModal'));
+        gestionRolesModal.hide();
+        
+        // Mostrar mensaje de confirmación
+        Swal.fire({
+          title: 'Roles actualizados',
+          text: 'Los roles del usuario han sido actualizados correctamente.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
+      });
+
+      // Confirmar eliminación de usuario
+      document.getElementById('btnConfirmarEliminar').addEventListener('click', function() {
+        // Cerrar el modal
+        var eliminarUsuarioModal = bootstrap.Modal.getInstance(document.getElementById('eliminarUsuarioModal'));
+        eliminarUsuarioModal.hide();
+        
+        // Mostrar mensaje de confirmación
+        Swal.fire({
+          title: 'Usuario eliminado',
+          text: 'El usuario ha sido eliminado del sistema.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
+      });
+    });
+  </script>
 
 </body>
-
 </html>
