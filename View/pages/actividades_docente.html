@@ -442,26 +442,161 @@
     <div class="row">
       <div class="col-12">
         <div class="card border-0 shadow">
-          <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">ACTIVIDADES - DOCENTE</h3>
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="fs-5 fw-bold mb-0">GESTIÓN DE EVENTOS</h3>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createEventModal">
+              <svg class="icon icon-xs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+              Crear Evento
+            </button>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+            <!-- Listado de eventos del docente -->
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Fecha de Creación</th>
+                    <th>Fecha del Evento</th>
+                    <th>Participantes</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Feria Científica</td>
+                    <td>10/10/2023</td>
+                    <td>24/10/2023</td>
+                    <td>5</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="1">
+                        Modificar
+                      </button>
+                      <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="1">
+                        Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Excursión al Museo</td>
+                    <td>15/10/2023</td>
+                    <td>31/10/2023</td>
+                    <td>12</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="2">
+                        Modificar
+                      </button>
+                      <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="2">
+                        Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Reunión de Padres</td>
+                    <td>20/10/2023</td>
+                    <td>05/11/2023</td>
+                    <td>8</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="3">
+                        Modificar
+                      </button>
+                      <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="3">
+                        Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Modal para crear evento -->
+    <div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createEventModalLabel">Crear Nuevo Evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="createEventForm">
+              <div class="mb-3">
+                <label for="eventTitle" class="form-label">Título</label>
+                <input type="text" class="form-control" id="eventTitle" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventDescription" class="form-label">Descripción</label>
+                <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="eventDate" class="form-label">Fecha del Evento</label>
+                <input type="date" class="form-control" id="eventDate" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="confirmCreate">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal para editar evento -->
+    <div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editEventModalLabel">Modificar Evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editEventForm">
+              <div class="mb-3">
+                <label for="editEventTitle" class="form-label">Título</label>
+                <input type="text" class="form-control" id="editEventTitle" required>
+              </div>
+              <div class="mb-3">
+                <label for="editEventDescription" class="form-label">Descripción</label>
+                <textarea class="form-control" id="editEventDescription" rows="3" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="editEventDate" class="form-label">Fecha del Evento</label>
+                <input type="date" class="form-control" id="editEventDate" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="confirmEdit">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal para eliminar evento -->
+    <div class="modal fade" id="deleteEventModal" tabindex="-1" aria-labelledby="deleteEventModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteEventModalLabel">Eliminar Evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Estás seguro que deseas eliminar este evento?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="confirmDelete">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>    
 
     <!-- Soporte Técnico -->
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
@@ -555,6 +690,83 @@
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
 
+  <script>
+    // Simulación de datos de eventos del docente
+    const teacherEvents = {
+      1: {
+        title: "Feria Científica",
+        creationDate: "10/10/2023",
+        eventDate: "24/10/2023",
+        description: "La feria científica anual donde los estudiantes presentarán sus proyectos de investigación.",
+        participants: 5
+      },
+      2: {
+        title: "Excursión al Museo",
+        creationDate: "15/10/2023",
+        eventDate: "31/10/2023",
+        description: "Visita al Museo Nacional para la clase de Historia.",
+        participants: 12
+      },
+      3: {
+        title: "Reunión de Padres",
+        creationDate: "20/11/2023",
+        eventDate: "22/11/2023",
+        description: "Reunión para discutir el progreso de los estudiantes.",
+        participants: 8
+      }
+    };
+  
+    // Script del Modal
+    document.getElementById('editEventModal').addEventListener('show.bs.modal', function(event) {
+      const button = event.relatedTarget;
+      const eventId = button.getAttribute('data-event-id');
+      const eventData = teacherEvents[eventId];
+      
+      document.getElementById('editEventTitle').value = eventData.title;
+      document.getElementById('editEventDescription').value = eventData.description;
+      
+      // Formatear fecha para el input date
+      const dateParts = eventData.eventDate.split('/');
+      const formattedDate = `${dateParts[2]}-${dateParts[1].padStart(2, '0')}-${dateParts[0].padStart(2, '0')}`;
+      document.getElementById('editEventDate').value = formattedDate;
+      
+      document.getElementById('confirmEdit').onclick = function() {
+        alert(`Evento ${eventId} modificado correctamente`);
+        const modal = bootstrap.Modal.getInstance(document.getElementById('editEventModal'));
+        modal.hide();
+      };
+    });
+  
+    // Script Modal Elminacion
+    document.getElementById('deleteEventModal').addEventListener('show.bs.modal', function(event) {
+      const button = event.relatedTarget;
+      const eventId = button.getAttribute('data-event-id');
+      
+      document.getElementById('confirmDelete').onclick = function() {
+        alert(`Evento ${eventId} eliminado correctamente`);
+        const modal = bootstrap.Modal.getInstance(document.getElementById('deleteEventModal'));
+        modal.hide();
+      };
+    });
+  
+    // Manejar la creación de nuevo evento
+    document.getElementById('confirmCreate').addEventListener('click', function() {
+      const title = document.getElementById('eventTitle').value;
+      const description = document.getElementById('eventDescription').value;
+      const eventDate = document.getElementById('eventDate').value;
+      
+      if (title && description && eventDate) {
+        alert(`Nuevo evento "${title}" creado para la fecha ${eventDate}`);
+        const modal = bootstrap.Modal.getInstance(document.getElementById('createEventModal'));
+        modal.hide();
+        
+        // Limpiar el formulario
+        document.getElementById('createEventForm').reset();
+      } else {
+        alert('Por favor complete todos los campos');
+      }
+    });
+  </script>
 
 </body>
 

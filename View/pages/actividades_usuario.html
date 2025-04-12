@@ -443,21 +443,141 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">ACTIVIDADES - USUARIO</h3>
+            <h3 class="fs-5 fw-bold mb-0">CALENDARIO DE ACTIVIDADES</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+            <!-- Calendario de eventos -->
+            <div class="calendar-container mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Octubre 2023</h4>
+                <div>
+                  <button class="btn btn-sm btn-outline-primary me-2"></button>
+                  <button class="btn btn-sm btn-outline-primary">></button>
+                </div>
+              </div>
+              
+              <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                  <thead>
+                    <tr>
+                      <th>Dom</th>
+                      <th>Lun</th>
+                      <th>Mar</th>
+                      <th>Mié</th>
+                      <th>Jue</th>
+                      <th>Vie</th>
+                      <th>Sáb</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-muted">1</td>
+                      <td class="text-muted">2</td>
+                      <td class="text-muted">3</td>
+                      <td class="text-muted">4</td>
+                      <td class="text-muted">5</td>
+                      <td>6</td>
+                      <td>7</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                      <td>11</td>
+                      <td>12</td>
+                      <td>13</td>
+                      <td>14</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>16</td>
+                      <td>17</td>
+                      <td>18</td>
+                      <td>19</td>
+                      <td>20</td>
+                      <td>21</td>
+                    </tr>
+                    <tr>
+                      <td>22</td>
+                      <td>23</td>
+                      <td>
+                        <div class="event-day">
+                          <div>24</div>
+                          <div class="event-badge" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-id="1">
+                            <span class="badge bg-primary">Feria Científica (5)</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>25</td>
+                      <td>26</td>
+                      <td>27</td>
+                      <td>28</td>
+                    </tr>
+                    <tr>
+                      <td>29</td>
+                      <td>30</td>
+                      <td>
+                        <div class="event-day">
+                          <div>31</div>
+                          <div class="event-badge" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-id="2">
+                            <span class="badge bg-success">Excursión (12)</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-muted">1</td>
+                      <td class="text-muted">2</td>
+                      <td class="text-muted">3</td>
+                      <td class="text-muted">4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Próximos eventos -->
+            <div class="upcoming-events">
+              <h5 class="mb-3">Próximos Eventos</h5>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-id="1">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">Feria Científica</h6>
+                    <small class="text-muted">24 Oct 2023</small>
+                  </div>
+                  <p class="mb-1">Participantes: 5</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-id="2">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">Excursión al Museo</h6>
+                    <small class="text-muted">31 Oct 2023</small>
+                  </div>
+                  <p class="mb-1">Participantes: 12</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal para detalles del evento -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eventModalLabel">Detalles del Evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4 id="eventTitle">Feria Científica</h4>
+            <p><strong>Fecha:</strong> <span id="eventDate">24 de Octubre, 2023</span></p>
+            <p><strong>Organizador:</strong> <span id="eventOrganizer">Prof. María Rodríguez</span></p>
+            <p><strong>Participantes:</strong> <span id="eventParticipants">5</span></p>
+            <hr>
+            <p id="eventDescription">La feria científica anual donde los estudiantes presentarán sus proyectos de investigación. Todos los padres y estudiantes están invitados a asistir.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="attendanceBtn">Asisto (No)</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
@@ -555,6 +675,71 @@
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
 
+  <script>
+    // Simulación de datos de eventos
+    const events = {
+      1: {
+        title: "Feria Científica",
+        date: "24 de Octubre, 2023",
+        organizer: "Prof. María Rodríguez",
+        participants: 5,
+        description: "La feria científica anual donde los estudiantes presentarán sus proyectos de investigación. Todos los padres y estudiantes están invitados a asistir.",
+        attending: false
+      },
+      2: {
+        title: "Excursión al Museo",
+        date: "31 de Octubre, 2023",
+        organizer: "Prof. Juan Pérez",
+        participants: 12,
+        description: "Visita al Museo Nacional para la clase de Historia. Salida a las 8:00 AM desde la escuela.",
+        attending: false
+      }
+    };
+  
+    // Script del Modal
+    document.getElementById('eventModal').addEventListener('show.bs.modal', function(event) {
+      const button = event.relatedTarget;
+      const eventId = button.getAttribute('data-event-id');
+      const eventData = events[eventId];
+      
+      document.getElementById('eventTitle').textContent = eventData.title;
+      document.getElementById('eventDate').textContent = eventData.date;
+      document.getElementById('eventOrganizer').textContent = eventData.organizer;
+      document.getElementById('eventParticipants').textContent = eventData.participants;
+      document.getElementById('eventDescription').textContent = eventData.description;
+      
+      const attendanceBtn = document.getElementById('attendanceBtn');
+      if (eventData.attending) {
+        attendanceBtn.textContent = "Asisto (Sí)";
+        attendanceBtn.classList.remove('btn-danger');
+        attendanceBtn.classList.add('btn-success');
+      } else {
+        attendanceBtn.textContent = "Asisto (No)";
+        attendanceBtn.classList.remove('btn-success');
+        attendanceBtn.classList.add('btn-danger');
+      }
+      
+      attendanceBtn.onclick = function() {
+        eventData.attending = !eventData.attending;
+        if (eventData.attending) {
+          eventData.participants++;
+          attendanceBtn.textContent = "Asisto (Sí)";
+          attendanceBtn.classList.remove('btn-danger');
+          attendanceBtn.classList.add('btn-success');
+        } else {
+          eventData.participants--;
+          attendanceBtn.textContent = "Asisto (No)";
+          attendanceBtn.classList.remove('btn-success');
+          attendanceBtn.classList.add('btn-danger');
+        }
+        document.getElementById('eventParticipants').textContent = eventData.participants;
+        
+        // Actualizar el badge en el calendario
+        const badge = document.querySelector(`.event-badge[data-event-id="${eventId}"] .badge`);
+        badge.textContent = `${eventData.title} (${eventData.participants})`;
+      };
+    });
+  </script>
 
 </body>
 
