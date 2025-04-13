@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!-- Primary Meta Tags -->
-  <title>Skolaris - Administración</title>
+  <title>Skolaris</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="title" content="Skolaris">
   <meta name="author" content="Skolaris">
@@ -81,7 +81,7 @@
             <span class="mt-1 ms-1 sidebar-text">Skolaris</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item  active ">
           <a href="../index.html" class="nav-link">
             <span class="sidebar-icon">
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -438,267 +438,152 @@
       </div>
     </nav>
 
-    <div class="row">
-      <div class="col-12">
-        <div class="card border-0 shadow">
-          <div class="card-header">
-            <div class="row align-items-center">
-              <div class="col">
-                <h3 class="fs-5 fw-bold mb-0">Gestión de Usuarios</h3>
+
+   <!-- parte ya del menu con los botones  -->
+
+  <div class="card border-0 shadow mb-4">
+    <div class="card-header">
+      <h3 class="fs-5 fw-bold mb-0">Accesos Rápidos Administrador</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <!-- Asistencia -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385V4.804zM12 4.804A7.968 7.968 0 0114.5 4c1.255 0 2.443.29 3.5.804v10a7.969 7.969 0 01-3.5.804c-1.669 0-3.218.51-4.5 1.385V4.804z"/>
+                </svg>
               </div>
-              <div class="col text-end">
-                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#crearUsuarioModal">
-                  <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                  </svg>
-                  Crear Usuario
-                </button>
-              </div>
+              <h3 class="h5">Asistencia</h3>
+              <p class="mb-3">Verifique su registro de asistencia</p>
+              <a href="asistencia_docente.html" class="btn btn-sm btn-outline-primary">Ver Asistencia</a>
             </div>
           </div>
-          <div class="table-responsive">
-            <table class="table align-items-center table-flush">
-              <thead class="thead-light">
-                <tr>
-                  <th class="border-bottom" scope="col">Cédula</th>
-                  <th class="border-bottom" scope="col">Nombre</th>
-                  <th class="border-bottom" scope="col">Apellido</th>
-                  <th class="border-bottom" scope="col">Correo Electrónico</th>
-                  <th class="border-bottom" scope="col">Roles</th>
-                  <th class="border-bottom" scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Usuario 1 -->
-                <tr>
-                  <td class="text-gray-900">1-2345-6789</td>
-                  <td class="fw-bold">Juan</td>
-                  <td class="fw-bold">Pérez</td>
-                  <td class="fw-bold">juan.perez@example.com</td>
-                  <td>
-                    <span class="badge bg-primary">Administrador</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
-                      Gestionar Roles
-                    </button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <!-- Usuario 2 -->
-                <tr>
-                  <td class="text-gray-900">2-3456-7890</td>
-                  <td class="fw-bold">María</td>
-                  <td class="fw-bold">González</td>
-                  <td class="fw-bold">maria.gonzalez@example.com</td>
-                  <td>
-                    <span class="badge bg-success">Docente</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
-                      Gestionar Roles
-                    </button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <!-- Usuario 3 -->
-                <tr>
-                  <td class="text-gray-900">3-4567-8901</td>
-                  <td class="fw-bold">Carlos</td>
-                  <td class="fw-bold">Rodríguez</td>
-                  <td class="fw-bold">carlos.rodriguez@example.com</td>
-                  <td>
-                    <span class="badge bg-warning">Estudiante</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
-                      Gestionar Roles
-                    </button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <!-- Usuario 4 -->
-                <tr>
-                  <td class="text-gray-900">4-5678-9012</td>
-                  <td class="fw-bold">Ana</td>
-                  <td class="fw-bold">Martínez</td>
-                  <td class="fw-bold">ana.martinez@example.com</td>
-                  <td>
-                    <span class="badge bg-success">Docente</span>
-                    <span class="badge bg-secondary">Tutor</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
-                      Gestionar Roles
-                    </button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-                <!-- Usuario 5 -->
-                <tr>
-                  <td class="text-gray-900">5-6789-0123</td>
-                  <td class="fw-bold">Luis</td>
-                  <td class="fw-bold">Hernández</td>
-                  <td class="fw-bold">luis.hernandez@example.com</td>
-                  <td>
-                    <span class="badge bg-warning">Estudiante</span>
-                  </td>
-                  <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
-                      Gestionar Roles
-                    </button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
-                      Eliminar
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        </div>
+        
+        <!-- Calificaciones -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              </div>
+              <h3 class="h5">Calificaciones</h3>
+              <p class="mb-3">Consulte sus calificaciones</p>
+              <a href="calificaciones_docente.html" class="btn btn-sm btn-outline-primary">Ver Calificaciones</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+        
+        <!-- Horarios -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="h5">Horarios</h3>
+              <p class="mb-3">Consulte sus horarios de clases</p>
+              <a href="horarios_administrador.html" class="btn btn-sm btn-outline-primary">Ver Horarios</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Comunicación -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                </svg>
+              </div>
+              <h3 class="h5">Comunicación</h3>
+              <p class="mb-3">Revise los últimos comunicados</p>
+              <a href="comunicacion_docente.html" class="btn btn-sm btn-outline-primary">Ver Comunicados</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Reportes -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v6a1 1 0 102 0V8z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="h5">Reportes</h3>
+              <p class="mb-3">Genere reportes académicos</p>
+              <a href="reportes_docente.html" class="btn btn-sm btn-outline-primary">Generar Reportes</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actividades -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="h5">Actividades/Eventos</h3>
+              <p class="mb-3">Próximas actividades escolares</p>
+              <a href="actividades_docente.html" class="btn btn-sm btn-outline-primary">Ver Actividades</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Docentes -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="h5">Docentes</h3>
+              <p class="mb-3">Información de los docentes</p>
+              <a href="docentes_administrador.html" class="btn btn-sm btn-outline-primary">Ver Docentes</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 d-none d-lg-block mb-4">
+          <!-- Espacio sin nada porque no me gusta igual se puede cambiar o agregar el boton de admon  -->
+        </div>
 
-    <!-- Modal Crear Usuario -->
-    <div class="modal fade" id="crearUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="crearUsuarioModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="crearUsuarioModalLabel">Crear Nuevo Usuario</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="formCrearUsuario">
-              <div class="form-group mb-3">
-                <label for="cedula">Cédula</label>
-                <input type="text" class="form-control" id="cedula" placeholder="Ingrese la cédula">
-              </div>
-              <div class="form-group mb-3">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
-              </div>
-              <div class="form-group mb-3">
-                <label for="apellido">Apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido">
-              </div>
-              <div class="form-group mb-3">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="Ingrese el correo electrónico">
-              </div>
-              <div class="form-group mb-3">
-                <label>Roles</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="rolAdmin">
-                  <label class="form-check-label" for="rolAdmin">
-                    Administrador
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="rolDocente">
-                  <label class="form-check-label" for="rolDocente">
-                    Docente
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="rolEstudiante">
-                  <label class="form-check-label" for="rolEstudiante">
-                    Estudiante
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="rolTutor">
-                  <label class="form-check-label" for="rolTutor">
-                    Tutor
-                  </label>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="btnConfirmarCrear">Confirmar</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Modal Gestionar Roles -->
-    <div class="modal fade" id="gestionRolesModal" tabindex="-1" role="dialog" aria-labelledby="gestionRolesModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="gestionRolesModalLabel">Gestionar Roles de Usuario</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="formGestionRoles">
-              <div class="mb-3">
-                <label class="form-label">Usuario: <strong>Juan Pérez (1-2345-6789)</strong></label>
+        <!-- Normativa -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body text-center">
+              <div class="icon-shape icon-lg bg-primary-soft text-primary rounded-circle mb-3">
+                <svg class="icon icon-md" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                </svg>
               </div>
-              <div class="form-group mb-3">
-                <label>Roles Actuales</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="editRolAdmin" checked>
-                  <label class="form-check-label" for="editRolAdmin">
-                    Administrador
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="editRolDocente">
-                  <label class="form-check-label" for="editRolDocente">
-                    Docente
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="editRolEstudiante">
-                  <label class="form-check-label" for="editRolEstudiante">
-                    Estudiante
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="editRolTutor">
-                  <label class="form-check-label" for="editRolTutor">
-                    Tutor
-                  </label>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
-            <button type="button" class="btn btn-primary" id="btnConfirmarRoles">Confirmar Cambios</button>
+              <h3 class="h5">Normativa</h3>
+              <p class="mb-3">Normativa institucional</p>
+              <a href="ver_normativa.html" class="btn btn-sm btn-outline-primary">Ver Normativa</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
 
-    <!-- Modal Eliminar Usuario -->
-    <div class="modal fade" id="eliminarUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="eliminarUsuarioModalLabel">Eliminar Usuario</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>¿Estás seguro que deseas eliminar al usuario <strong>Juan Pérez (1-2345-6789)</strong>?</p>
-            <p class="text-danger">Esta acción no se puede deshacer.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger" id="btnConfirmarEliminar">Confirmar Eliminación</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Soporte Técnico -->
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
@@ -726,6 +611,36 @@
         </span>
       </div>
     </div>
+
+
+    <!-- Soporte Técnico -->
+    <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+      <div class="card-body bg-gray-800 text-white pt-4">
+        <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
+          href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="m-0 mb-1 me-4 fs-7">Soporte Técnico</p>
+        </div>
+        <a href="soporte.html"
+          class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
+          Contactar Soporte
+          <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
+      <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
+        <span class="fw-bold d-inline-flex align-items-center h6">
+          Soporte Técnico
+        </span>
+      </div>
+    </div>
+
+  </main>
 
     <!-- Footer -->
     <footer class="bg-white rounded shadow p-3 mt-4">
@@ -792,54 +707,7 @@
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Confirmar creación de usuario
-      document.getElementById('btnConfirmarCrear').addEventListener('click', function() {
-        // Cerrar el modal
-        var crearUsuarioModal = bootstrap.Modal.getInstance(document.getElementById('crearUsuarioModal'));
-        crearUsuarioModal.hide();
-        
-        // Mostrar mensaje de confirmación
-        Swal.fire({
-          title: 'Usuario creado',
-          text: 'El usuario ha sido creado exitosamente.',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        });
-      });
-
-      // Confirmar cambios de roles
-      document.getElementById('btnConfirmarRoles').addEventListener('click', function() {
-        // Cerrar el modal
-        var gestionRolesModal = bootstrap.Modal.getInstance(document.getElementById('gestionRolesModal'));
-        gestionRolesModal.hide();
-        
-        // Mostrar mensaje de confirmación
-        Swal.fire({
-          title: 'Roles actualizados',
-          text: 'Los roles del usuario han sido actualizados correctamente.',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        });
-      });
-
-      // Confirmar eliminación de usuario
-      document.getElementById('btnConfirmarEliminar').addEventListener('click', function() {
-        // Cerrar el modal
-        var eliminarUsuarioModal = bootstrap.Modal.getInstance(document.getElementById('eliminarUsuarioModal'));
-        eliminarUsuarioModal.hide();
-        
-        // Mostrar mensaje de confirmación
-        Swal.fire({
-          title: 'Usuario eliminado',
-          text: 'El usuario ha sido eliminado del sistema.',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        });
-      });
-    });
-  </script>
 
 </body>
+
 </html>

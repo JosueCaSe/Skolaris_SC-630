@@ -443,25 +443,137 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">ASISTENCIA - DOCENTE</h3>
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="fs-5 fw-bold mb-0">Gestión de Asistencia</h3>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-sm btn-primary" id="btnNuevaAsistencia">
+                  <i class="fas fa-plus me-1"></i> Nueva Asistencia
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+            <!-- Listado de grupos con opciones -->
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Materia</th>
+                    <th>Horario</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>primero</td>
+                    <td>Matemáticas</td>
+                    <td>Lunes y Miércoles 8:00-9:30</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="10A">
+                        <i class="fas fa-clipboard-check me-1"></i> Pasar Asistencia
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="10A">
+                        <i class="fas fa-edit me-1"></i> Modificar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>segundo</td>
+                    <td>Ciencias</td>
+                    <td>Martes y Jueves 10:00-11:30</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="9B">
+                        <i class="fas fa-clipboard-check me-1"></i> Pasar Asistencia
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="9B">
+                        <i class="fas fa-edit me-1"></i> Modificar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>tercero</td>
+                    <td>Historia</td>
+                    <td>Viernes 7:30-9:00</td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="11C">
+                        <i class="fas fa-clipboard-check me-1"></i> Pasar Asistencia
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="11C">
+                        <i class="fas fa-edit me-1"></i> Modificar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!--pasar asistencia -->
+    <div class="modal fade" id="modalAsistencia" tabindex="-1" aria-labelledby="modalAsistenciaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAsistenciaLabel">Registrar Asistencia - <span id="nombreGrupo"></span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="fechaAsistencia" class="form-label">Fecha de la clase</label>
+              <input type="date" class="form-control" id="fechaAsistencia" value="">
+            </div>
+            
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Estudiante</th>
+                    <th>Asistencia</th>
+                    <th>Observaciones</th>
+                  </tr>
+                </thead>
+                <tbody id="listaEstudiantes">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="btnGuardarAsistencia">Guardar Asistencia</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- modificar asistencia previa -->
+    <div class="modal fade" id="modalModificarAsistencia" tabindex="-1" aria-labelledby="modalModificarAsistenciaLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalModificarAsistenciaLabel">Seleccionar fecha a modificar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="fechaModificacion" class="form-label">Seleccione la fecha de la clase:</label>
+              <select class="form-select" id="fechaModificacion">
+                <option value="">-- Seleccione una fecha --</option>
+                <option value="2025-04-10">10 de Abril 2025</option>
+                <option value="2025-04-03">3 de Abril 2025</option>
+                <option value="2025-03-27">27 de Marzo 2025</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            
+
+
 
     <!-- Soporte Técnico -->
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
