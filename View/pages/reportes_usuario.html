@@ -446,21 +446,28 @@
             <h3 class="fs-5 fw-bold mb-0">REPORTES - USUARIO</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+            <div id="reporteCalificaciones">
+              <label for="checkboxCalificaciones">Calificaciones</label>
+              <input type="checkbox" id="checkboxCalificaciones">
+              <button id="btnConfirmarCalificaciones" class="btn btn-primary">Confirmar</button>
+              <p id="mensajeCalificaciones" class="d-none text-danger">Reporte No Disponible</p>
+            </div>
+            <hr>
+            <div id="reporteAsistencias">
+              <label for="checkboxAsistencias">Asistencias</label>
+              <input type="checkbox" id="checkboxAsistencias">
+              <button id="btnConfirmarAsistencias" class="btn btn-primary">Confirmar</button>
+              <p id="mensajeAsistencias" class="d-none text-danger">Reporte No Disponible</p>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Mensaje de confirmación -->
+    <div id="mensajeConfirmacion" class="d-none">
+      <p>Se ha confirmado la lectura del reporte</p>
+      <button id="btnOk" class="btn btn-success">Ok</button>
     </div>
 
     <!-- Soporte Técnico -->
@@ -554,6 +561,7 @@
 
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
+  <script src="../assets/js/reportes.js"></script>
 
 
 </body>

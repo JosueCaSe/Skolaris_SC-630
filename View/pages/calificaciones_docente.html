@@ -446,18 +446,83 @@
             <h3 class="fs-5 fw-bold mb-0">CALIFICACIONES - DOCENTE</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+            <h5 class="text-center">Grupos Asignados</h5>
+            <!-- Tabla con los grupos asignados y botones para registrar/modificar calificaciones -->
+            <table class="table table-bordered align-middle">
+              <thead class="table-dark text-center">
+                <tr>
+                  <th>Grupo</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Aquí agregamos los grupos y botones de forma estática -->
+                <tr>
+                  <td>Grupo 1A</td>
+                  <td class="text-center">
+                    <button class="btn btn-outline-primary btnRegistrar" data-grupo="1A">Registrar
+                      Calificaciones</button>
+                    <button class="btn btn-outline-warning btnModificar" data-grupo="1A">Modificar
+                      Calificaciones</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Grupo 2B</td>
+                  <td class="text-center">
+                    <button class="btn btn-outline-primary btnRegistrar" data-grupo="2B">Registrar
+                      Calificaciones</button>
+                    <button class="btn btn-outline-warning btnModificar" data-grupo="2B">Modificar
+                      Calificaciones</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+    
+            <!-- Sección para mostrar el formulario de selección de semestre -->
+            <div id="formularioSeleccionSemestre" class="d-none mt-4">
+              <h5 class="text-center">Seleccionar Semestre para Modificar Calificaciones</h5>
+              <form id="formSeleccionSemestre">
+                <div class="mb-3">
+                  <label for="semestre" class="form-label">Seleccione el semestre</label>
+                  <select id="semestre" class="form-control" required>
+                    <option value="">Seleccione un semestre</option>
+                    <option value="actual">Semestre Actual</option>
+                    <option value="anterior">Semestre Anterior</option>
+                  </select>
+                </div>
+                <div class="text-center mt-3">
+                  <button type="button" class="btn btn-success" id="btnConfirmar">Confirmar</button>
+                  <button type="button" class="btn btn-secondary" id="btnCancelarSeleccion">Cancelar</button>
+                </div>
+              </form>
+            </div>
+    
+            <!-- Sección para mostrar el formulario de calificaciones (registrar o modificar) -->
+            <div id="formularioCalificaciones" class="d-none mt-4">
+              <h5 class="text-center" id="tituloFormulario">Registrar Calificaciones - Grupo</h5>
+              <form id="formCalificaciones">
+                <!-- Tabla para mostrar los estudiantes con su respectivo campo de calificación y comentarios -->
+                <table class="table table-bordered align-middle">
+                  <thead class="table-secondary text-center">
+                    <tr>
+                      <th>Nombre del Estudiante</th>
+                      <th>Calificación</th>
+                      <th>Comentarios</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tablaEstudiantes">
+                    <!-- Aquí se cargarán los estudiantes dinámicamente con JS -->
+                  </tbody>
+                </table>
+    
+                <!-- Botones de acción -->
+                <div class="text-center mt-3">
+                  <button type="submit" class="btn btn-success">Guardar</button>
+                  <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+                </div>
+              </form>
+            </div>
+    
           </div>
         </div>
       </div>
@@ -554,6 +619,12 @@
 
   <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
+
+  <!-- CALIFICACIONES JS -->
+  <script src="../assets/js/calificaciones.js"></script>
+
+  <!-- MODCALIFICACIONES JS -->
+  <script src="../assets/js/modcalificaciones.js"></script>
 
 
 </body>

@@ -446,18 +446,74 @@
             <h3 class="fs-5 fw-bold mb-0">CALIFICACIONES - USUARIO</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
+            <h4 class="text-center mb-4 fw-bold">Módulo Calificaciones</h4>
+            <!-- Sección de Calificaciones del Semestre Actual -->
+            <div id="calificacionesActuales">
+              <table class="table table-bordered align-middle">
+                <thead class="table-dark text-center">
+                  <tr>
+                    <th>Materia</th>
+                    <th>Calificación</th>
+                    <th>Comentario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Matemáticas</td>
+                    <td>8.5</td>
+                    <td>Buen rendimiento</td>
+                  </tr>
+                  <tr>
+                    <td>Historia</td>
+                    <td>No Disponible</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Lengua</td>
+                    <td>9.0</td>
+                    <td>Excelente</td>
+                  </tr>
+                </tbody>
+              </table>
 
+              <!-- Botones con margen superior -->
+              <div class="d-flex justify-content-between mt-4">
+                <button id="btnSemestreAnterior" class="btn btn-outline-primary">Ver Semestre Anterior</button>
+                <button id="btnGenerarReporte" class="btn btn-outline-success">Generar Reporte</button>
+              </div>
+            </div>
+            <!-- Sección de Calificaciones del Semestre Anterior -->
+            <div id="calificacionesAnteriores" class="d-none mt-4">
+              <h5 class="text-center">Calificaciones del Semestre Anterior</h5>
+              <table id="tablaAnterior" class="table table-bordered align-middle">
+                <thead class="table-secondary text-center">
+                  <tr>
+                    <th>Materia</th>
+                    <th>Calificación</th>
+                    <th>Comentario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Matemáticas</td>
+                    <td>7.5</td>
+                    <td>Rendimiento Aceptable</td>
+                  </tr>
+                  <tr>
+                    <td>Historia</td>
+                    <td>8.0</td>
+                    <td>Aprobado</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Contenedor con clases para centrar los botones -->
+              <div class="d-flex justify-content-between mt-4">
+                <button id="btnGenerarReporteAnterior"  class="btn btn-outline-primary">Generar Reporte</button>
+                <button id="btnVolverActuales" class="btn btn-outline-success">Volver a Calificaciones
+                  Actuales</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -539,6 +595,12 @@
 
   <!-- Moment JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+   <!-- jsPDF -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+   <!-- jsPDF AutoTable -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 
   <!-- Vanilla JS Datepicker -->
   <script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
