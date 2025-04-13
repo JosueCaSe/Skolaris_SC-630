@@ -443,21 +443,153 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">DOCENTE - ADMINISTRADOR </h3>
+            <h3 class="fs-5 fw-bold mb-0">DOCENTE - ADMINISTRADOR</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+    
+            <div id="listaDocentes"></div>
+    
+            <div id="modalInfo" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="cerrarModal('modalInfo')">&times;</span>
+                <div id="detalleDocente"></div>
+              </div>
+            </div>
+    
+            <div id="modalAccion" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="cerrarModal('modalAccion')">&times;</span>
+                <h4 id="accionTitulo"></h4>
+                <div id="accionContenido"></div>
+                <div class="modal-footer">
+                  <button class="btn btn-danger" onclick="cerrarModal('modalAccion')">Cancelar</button>
+                  <button class="btn btn-primary" id="accionConfirmar">Confirmar</button>
+                </div>
+              </div>
+            </div>
+    
+            <script>
+              const docentes = [
+                {
+                  nombre: "María", apellidos: "González Pérez", correo: "maria.gonzalez@instituto.edu",
+                  celular: "123456789", materia: "Matemáticas", ingreso: "2015-08-01", estado: "Disponible",
+                  horarios: ["Lunes 10am", "Viernes 7pm"]
+                },
+                {
+                  nombre: "Juan", apellidos: "Martínez Ruiz", correo: "juan.martinez@instituto.edu",
+                  celular: "987654321", materia: "Lengua", ingreso: "2018-03-15", estado: "Incapacidad",
+                  horarios: ["Miércoles 1pm"]
+                },
+                {
+                  nombre: "Laura", apellidos: "Sánchez", correo: "laura.sanchez@instituto.edu",
+                  celular: "555888999", materia: "Inglés", ingreso: "2020-01-10", estado: "No Disponible",
+                  horarios: []
+                },
+                {
+                  nombre: "Eduardo", apellidos: "Cordero", correo: "eduardo.cordero@instituto.edu",
+                  celular: "5423567872", materia: "Arquitectura", ingreso: "2020-09-08", estado: "Disponible",
+                  horarios: ["Viernes 3pm"]
+                }
+              ];
+    
+              let docenteActual = null;
+              let horarioActual = null;
+              let accionTipo = "";
+    
+              function mostrarDocentes() {
+                const contenedor = document.getElementById("listaDocentes");
+                contenedor.innerHTML = "";
+    
+                docentes.forEach((docente, index) => {
+                  const card = document.createElement("div");
+                  card.className = "docente mb-4";
+                  card.innerHTML = `
+                    <strong>${docente.nombre} ${docente.apellidos}</strong><br>
+                    <small>${docente.correo} - ${docente.materia} - <em>${docente.estado}</em></small><br>
+                    <div>Horarios: 
+                      ${docente.horarios.length > 0 ? docente.horarios.map((h, i) => `
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                          <span class="horario-tag">${h}</span>
+                          <button class="btn btn-sm btn-primary" onclick="abrirAccion('modificar', ${index}, ${i})">Modificar</button>
+                          <button class="btn btn-sm btn-danger" onclick="abrirAccion('eliminar', ${index}, ${i})">Eliminar</button>
+                        </div>
+                      `).join('') : 'Sin horarios'}
+                    </div>
+                    <button class="btn btn-primary mt-2" onclick="verMas(${index})">Ver Más</button>
+                    <button class="btn btn-primary mt-2" onclick="abrirAccion('asignar', ${index})">Asignar nuevo horario</button>
+                  `;
+                  contenedor.appendChild(card);
+                });
+              }
+    
+              function verMas(index) {
+                const d = docentes[index];
+                document.getElementById("detalleDocente").innerHTML = `
+                  <h4>Información del Docente</h4>
+                  <p><strong>Nombre:</strong> ${d.nombre} ${d.apellidos}</p>
+                  <p><strong>Correo:</strong> ${d.correo}</p>
+                  <p><strong>Celular:</strong> ${d.celular}</p>
+                  <p><strong>Materia:</strong> ${d.materia}</p>
+                  <p><strong>Ingreso:</strong> ${d.ingreso}</p>
+                  <p><strong>Estado:</strong> ${d.estado}</p>
+                  <p><strong>Horarios:</strong> ${d.horarios.map(h => `<span class="horario-tag">${h}</span>`).join(' ') || 'Sin horarios asignados'}</p>
+                `;
+                document.getElementById("modalInfo").style.display = "flex";
+              }
+    
+              function abrirAccion(tipo, docenteIndex, horarioIndex = null) {
+                docenteActual = docenteIndex;
+                horarioActual = horarioIndex;
+                accionTipo = tipo;
+                const d = docentes[docenteIndex];
+                document.getElementById("accionTitulo").innerText = tipo.charAt(0).toUpperCase() + tipo.slice(1) + " horario";
+    
+                let contenido = "";
+    
+                if (tipo === "modificar") {
+                  contenido = `
+                    <p>Horario actual: <strong>${d.horarios[horarioIndex]}</strong></p>
+                    <input type="text" id="nuevoValor" placeholder="Nuevo horario (Ej: Martes 2pm)" />
+                  `;
+                } else if (tipo === "asignar") {
+                  contenido = `
+                    <p>Asignar nuevo horario:</p>
+                    <input type="text" id="nuevoValor" placeholder="Ej: Jueves 9am" />
+                  `;
+                } else if (tipo === "eliminar") {
+                  contenido = `
+                    <p>¿Seguro que deseas eliminar este horario?</p>
+                    <strong>${d.horarios[horarioIndex]}</strong>
+                  `;
+                }
+    
+                document.getElementById("accionContenido").innerHTML = contenido;
+                document.getElementById("modalAccion").style.display = "flex";
+              }
+    
+              document.getElementById("accionConfirmar").onclick = function () {
+                const valor = document.getElementById("nuevoValor")?.value;
+                const d = docentes[docenteActual];
+    
+                if (accionTipo === "modificar" && valor) {
+                  d.horarios[horarioActual] = valor;
+                } else if (accionTipo === "asignar" && valor) {
+                  d.horarios.push(valor);
+                } else if (accionTipo === "eliminar") {
+                  d.horarios.splice(horarioActual, 1);
+                }
+    
+                cerrarModal("modalAccion");
+                mostrarDocentes();
+              };
+    
+              function cerrarModal(id) {
+                document.getElementById(id).style.display = "none";
+              }
+    
+              mostrarDocentes();
+            </script>
+    
           </div>
         </div>
       </div>
@@ -514,6 +646,14 @@
     </footer>
   </main>
 
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.section');
+      secciones.forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
   <!-- Core -->
   <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -559,3 +699,124 @@
 </body>
 
 </html>
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  #filtros {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #filtroMateria {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+
+  .docente {
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .docente:hover {
+    transform: translateY(-2px);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h4 {
+    margin-top: 0;
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .horario-tag {
+    background: #f0f0f0;
+    padding: 3px 8px;
+    margin: 3px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  .modal-footer {
+    margin-top: 15px;
+    text-align: right;
+  }
+
+  .modal-footer button {
+    margin-left: 8px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .btn {
+    margin: 5px;
+  }
+
+  .section {
+    display: none;
+  }
+
+  .section.active {
+    display: block;
+  }
+
+  .table-docentes {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-docentes th,
+  .table-docentes td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+</style>

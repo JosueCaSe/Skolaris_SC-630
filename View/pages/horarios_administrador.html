@@ -446,17 +446,25 @@
             <h3 class="fs-5 fw-bold mb-0">HORARIOS - ADMINISTRADOR</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="fw-bold">Listado de Clases</h5>
+              <button class="btn btn-primary" onclick="abrirFormulario('agregar')">Agregar Clase</button>
+            </div>
+
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Materia</th>
+                  <th>Horario</th>
+                  <th>Docente</th>
+                  <th>Grupo</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
 
           </div>
         </div>
@@ -513,6 +521,149 @@
       </div>
     </footer>
   </main>
+
+  <div class="modal fade" id="modalClase" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content shadow">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalClaseTitulo">Agregar Clase</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Materia</label>
+              <input type="text" class="form-control" placeholder="Ej. Ciencias">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Horario</label>
+              <input type="text" class="form-control" placeholder="Ej. Jueves 10:00 - 11:30">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Docente</label>
+              <input type="text" class="form-control" placeholder="Ej. Prof. Pérez">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Grupo</label>
+              <input type="text" class="form-control" placeholder="Ej. Grupo C">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-primary" onclick="confirmarClase()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalEliminar" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content shadow">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmar Eliminación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro que deseas eliminar la clase?
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-danger" onclick="confirmarEliminar()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let clases = [
+      { materia: "Matemáticas", horario: "Lunes 9:00 - 10:30", docente: "Prof. Juárez", grupo: "Grupo A" },
+      { materia: "Inglés", horario: "Martes 11:00 - 12:30", docente: "Prof. Gómez", grupo: "Grupo B" },
+      { materia: "Ciencias", horario: "Miércoles 11:00 - 12:30", docente: "Prof. Martinez", grupo: "Grupo A" },
+      { materia: "Estudios Sociales", horario: "Viernes 1:00 - 3:30", docente: "Prof. Rodríguez", grupo: "Grupo A" },
+    ];
+
+    let modoFormulario = 'agregar';
+    let indiceClaseEditar = null;
+
+    function renderizarTabla() {
+      const tbody = document.querySelector("tbody");
+      tbody.innerHTML = "";
+
+      clases.forEach((clase, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td>${clase.materia}</td>
+        <td>${clase.horario}</td>
+        <td>${clase.docente}</td>
+        <td>${clase.grupo}</td>
+        <td>
+          <button class="btn btn-sm btn-primary me-2" onclick="abrirFormulario('modificar', ${index})">Modificar Clase</button>
+          <button class="btn btn-sm btn-danger" onclick="abrirModalEliminar(${index})">Eliminar Clase</button>
+        </td>
+      `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.onload = renderizarTabla;
+
+    function abrirFormulario(tipo, index = null) {
+      modoFormulario = tipo;
+      indiceClaseEditar = index;
+
+      document.getElementById('modalClaseTitulo').innerText = tipo === 'agregar' ? 'Agregar Clase' : 'Modificar Clase';
+
+      const form = document.querySelector("#modalClase form");
+      form.reset();
+
+      if (tipo === 'modificar' && clases[index]) {
+        form[0].value = clases[index].materia;
+        form[1].value = clases[index].horario;
+        form[2].value = clases[index].docente;
+        form[3].value = clases[index].grupo;
+      }
+
+      const modal = new bootstrap.Modal(document.getElementById('modalClase'));
+      modal.show();
+    }
+
+    function confirmarClase() {
+      const form = document.querySelector("#modalClase form");
+      const nuevaClase = {
+        materia: form[0].value,
+        horario: form[1].value,
+        docente: form[2].value,
+        grupo: form[3].value
+      };
+
+      if (modoFormulario === 'agregar') {
+        clases.push(nuevaClase);
+      } else if (modoFormulario === 'modificar' && indiceClaseEditar !== null) {
+        clases[indiceClaseEditar] = nuevaClase;
+      }
+
+      renderizarTabla();
+      bootstrap.Modal.getInstance(document.getElementById('modalClase')).hide();
+    }
+
+    let indiceEliminar = null;
+
+    function abrirModalEliminar(index) {
+      indiceEliminar = index;
+      const modal = new bootstrap.Modal(document.getElementById('modalEliminar'));
+      modal.show();
+    }
+
+    function confirmarEliminar() {
+      if (indiceEliminar !== null) {
+        clases.splice(indiceEliminar, 1);
+        renderizarTabla();
+      }
+
+      bootstrap.Modal.getInstance(document.getElementById('modalEliminar')).hide();
+    }
+  </script>
 
   <!-- Core -->
   <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
