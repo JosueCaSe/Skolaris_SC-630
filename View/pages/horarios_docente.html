@@ -446,18 +446,37 @@
             <h3 class="fs-5 fw-bold mb-0">HORARIOS - DOCENTE</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
 
+            <div class="list-group">
+              <div class="mb-3 conatiner-card">
+                <h5>Grupo 7A - Matemáticas</h5>
+                <p>Horario: Lunes y Miércoles 10:00am - 11:30am</p>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" onclick="abrirModalEstudiantes()">Ver
+                  Estudiantes</button>
+              </div>
+
+              <div class="mb-3 conatiner-card">
+                <h5>Grupo 7B - Matemáticas</h5>
+                <p>Horario: Martes y Jueves 10:00am - 11:30am</p>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" onclick="abrirModalEstudiantes()">Ver
+                  Estudiantes</button>
+              </div>
+
+              <div class="mb-3 conatiner-card">
+                <h5>Grupo 8A - Ciencias</h5>
+                <p>Horario: Martes y Jueves 9:00am - 10:30am</p>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" onclick="abrirModalEstudiantes()">Ver
+                  Estudiantes</button>
+              </div>
+
+              <div class="mb-3 conatiner-card">
+                <h5>Grupo 8B - Ciencias</h5>
+                <p>Horario: Miercoles y Viernes 1:00pm - 3:30pm</p>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" onclick="abrirModalEstudiantes()">Ver
+                  Estudiantes</button>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -514,6 +533,79 @@
     </footer>
   </main>
 
+  <div class="modal fade" id="modalEstudiantes" tabindex="-1" aria-labelledby="modalEstudiantesLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content shadow">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEstudiantesLabel">Estudiantes del Grupo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group mb-3" id="listaEstudiantes">
+          </ul>
+          <div>
+            <h6>Agregar Estudiante</h6>
+            <input type="text" class="form-control mb-2" id="inputNombreEstudiante" placeholder="Nombre del Estudiante">
+            <button class="btn btn-primary btn-sm" onclick="agregarEstudiante()">Agregar</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let estudiantesGrupo = ['María Rodríguez', 'Juan Pérez'];
+
+    function abrirModalEstudiantes() {
+      renderizarListaEstudiantes();
+      const modal = new bootstrap.Modal(document.getElementById('modalEstudiantes'));
+      modal.show();
+    }
+
+    function renderizarListaEstudiantes() {
+      const lista = document.getElementById('listaEstudiantes');
+      lista.innerHTML = '';
+
+      estudiantesGrupo.forEach((nombre, index) => {
+        const li = document.createElement('li');
+        li.className = 'conatiner-card list-group-item d-flex justify-content-between align-items-center';
+        li.innerHTML = `
+          ${nombre}
+          <button class="btn btn-danger btn-sm" onclick="eliminarEstudiante(${index})">Eliminar</button>
+        `;
+        lista.appendChild(li);
+      });
+    }
+
+    function agregarEstudiante() {
+      const input = document.getElementById('inputNombreEstudiante');
+      const nombre = input.value.trim();
+
+      if (nombre === '') {
+        alert('Por favor, ingresa un nombre válido.');
+        return;
+      }
+
+      estudiantesGrupo.push(nombre);
+      input.value = '';
+      renderizarListaEstudiantes();
+    }
+
+    function eliminarEstudiante(index) {
+      const nombre = estudiantesGrupo[index];
+      const confirmar = confirm(`¿Eliminar a ${nombre}?`);
+
+      if (confirmar) {
+        estudiantesGrupo.splice(index, 1);
+        renderizarListaEstudiantes();
+      }
+    }
+  </script>
+
   <!-- Core -->
   <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -559,3 +651,68 @@
 </body>
 
 </html>
+
+<style>
+  .conatiner-card {
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .conatiner-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .list-group-item {
+    font-size: 15px;
+  }
+
+  .modal-title {
+    font-weight: bold;
+  }
+
+  .modal-body input {
+    max-width: 300px;
+  }
+
+  .card-header h3 {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .card-body h5 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-body p {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+
+  .btn-sm {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  #formAgregar input {
+    max-width: 300px;
+  }
+
+  ul.list-group {
+    max-width: 500px;
+  }
+
+  ul.list-group li {
+    font-size: 0.95rem;
+  }
+
+  #estudiantesContainer,
+  #formAgregar {
+    transition: all 0.3s ease-in-out;
+  }
+</style>

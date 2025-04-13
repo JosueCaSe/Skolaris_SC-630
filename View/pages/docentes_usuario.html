@@ -446,18 +446,25 @@
             <h3 class="fs-5 fw-bold mb-0">DOCENTE - USUARIO</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-
+            
+            <div id="filtros">
+              <select id="filtroMateria">
+                <option value="">Todas las materias</option>
+                <option value="Matemáticas">Matemáticas</option>
+                <option value="Lengua">Lengua</option>
+                <option value="Inglés">Inglés</option>
+              </select>
+              <button class="btn btn-primary" onclick="filtrarDocentes()">Confirmar</button>
+            </div>
+    
+            <div id="listaDocentes"></div>
+    
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <div id="detalleDocente"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -514,6 +521,81 @@
     </footer>
   </main>
 
+  <script>
+    const docentes = [
+      {
+        nombre: "María",
+        apellidos: "González Pérez",
+        correo: "maria.gonzalez@instituto.edu",
+        celular: "123456789",
+        materia: "Matemáticas",
+        ingreso: "2015-08-01"
+      },
+      {
+        nombre: "Juan",
+        apellidos: "Martínez Ruiz",
+        correo: "juan.martinez@instituto.edu",
+        celular: "987654321",
+        materia: "Lengua",
+        ingreso: "2018-03-15"
+      },
+      {
+        nombre: "Laura",
+        apellidos: "Sánchez",
+        correo: "laura.sanchez@instituto.edu",
+        celular: "555888999",
+        materia: "Inglés",
+        ingreso: "2020-01-10"
+      }
+    ];
+
+    function mostrarDocentes(lista = docentes) {
+      const contenedor = document.getElementById("listaDocentes");
+      contenedor.innerHTML = "";
+
+      lista.forEach((docente, index) => {
+        const card = document.createElement("div");
+        card.className = "docente";
+        card.innerHTML = `
+          <strong>${docente.nombre} ${docente.apellidos}</strong><br>
+          ${docente.correo} - ${docente.materia}<br>
+          <button class="btn btn-primary" onclick="verMas(${index})">Ver más</button>
+        `;
+        contenedor.appendChild(card);
+      });
+    }
+
+    function filtrarDocentes() {
+      const materiaSeleccionada = document.getElementById("filtroMateria").value;
+      if (materiaSeleccionada === "") {
+        mostrarDocentes();
+      } else {
+        const filtrados = docentes.filter(d => d.materia === materiaSeleccionada);
+        mostrarDocentes(filtrados);
+      }
+    }
+
+    function verMas(index) {
+      const docente = docentes[index];
+      const detalle = `
+        <h2>Información del Docente</h2>
+        <p><strong>Nombre:</strong> ${docente.nombre} ${docente.apellidos}</p>
+        <p><strong>Correo:</strong> ${docente.correo}</p>
+        <p><strong>Celular:</strong> ${docente.celular}</p>
+        <p><strong>Materia:</strong> ${docente.materia}</p>
+        <p><strong>Ingreso:</strong> ${docente.ingreso}</p>
+      `;
+      document.getElementById("detalleDocente").innerHTML = detalle;
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    mostrarDocentes();
+  </script>
+
   <!-- Core -->
   <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -559,3 +641,85 @@
 </body>
 
 </html>
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  #filtros {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #filtroMateria {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+
+  .docente {
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .docente:hover {
+    transform: translateY(-2px);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 14px;
+    width: 70%;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 26px;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .modal-content p {
+    margin: 6px 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

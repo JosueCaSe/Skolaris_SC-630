@@ -446,18 +446,180 @@
             <h3 class="fs-5 fw-bold mb-0">HORARIOS - USUARIO</h3>
           </div>
           <div class="card-body">
-            <p>CONTENIDO</p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
-            <p> +++ </p>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Hora</th>
+                  <th>Lunes</th>
+                  <th>Martes</th>
+                  <th>Miércoles</th>
+                  <th>Jueves</th>
+                  <th>Viernes</th>
+                </tr>
+              </thead>
+              <tbody>
 
+                <tr>
+                  <td>7:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Matemáticas', '7:00 - 8:00', 'Profe: Juan Pérez', 'Ejercicios para la próxima semana.')">
+                      Matemáticas</div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>8:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Matemáticas', '7:00 - 8:00', 'Profe: Juan Pérez', 'Ejercicios para la próxima semana.')">
+                      Matemáticas</div>
+                  </td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Inglés', '8:00 - 9:00', 'Profe: Ana Ramírez', 'Revisar vocabulario')">Inglés
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Español', '8:00 - 10:00', 'Profe: Rosa Madrigal', 'Traer libro')">
+                      Español
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>9:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Historia', '9:00 - 10:00', 'Profe: Carlos Díaz', 'Traer libro')">Historia
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Inglés', '8:00 - 9:00', 'Profe: Ana Ramírez', 'Revisar vocabulario')">Inglés
+                    </div>
+                  </td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Historia', '9:00 - 10:00', 'Profe: Carlos Díaz', 'Traer libro')">Historia
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Español', '8:00 - 10:00', 'Profe: Rosa Madrigal', 'Traer libro')">
+                      Español
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>10:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Historia', '9:00 - 10:00', 'Profe: Carlos Díaz', 'Traer libro')">Historia
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Historia', '9:00 - 10:00', 'Profe: Carlos Díaz', 'Traer libro')">Historia
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Español', '8:00 - 10:00', 'Profe: Rosa Madrigal', 'Traer libro')">
+                      Español
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>11:00</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>12:00</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>1:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Ciencias', '1:00 - 3:00', 'Profe: Ruben Perez', 'Traer libro')">Ciencias
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Estudios Sociales', '1:00 - 3:00', 'Profe: Carla Rodríguez', 'Traer libro')">
+                      Estudios Sociales
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>2:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Ciencias', '1:00 - 3:00', 'Profe: Ruben Perez', 'Traer libro')">Ciencias
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Estudios Sociales', '1:00 - 3:00', 'Profe: Carla Rodríguez', 'Traer libro')">
+                      Estudios Sociales
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>3:00</td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Ciencias', '1:00 - 3:00', 'Profe: Ruben Perez', 'Traer libro')">Ciencias
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="class-block"
+                      onclick="showModal('Estudios Sociales', '1:00 - 3:00', 'Profe: Carla Rodríguez', 'Traer libro')">
+                      Estudios Sociales
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -514,6 +676,38 @@
     </footer>
   </main>
 
+  <div id="classModal" class="modal"
+    style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color: rgba(0,0,0,0.4);">
+    <div class="modal-content"
+      style="background-color: #fefefe; margin:10% auto; padding:20px; border:1px solid #888; width:80%;">
+      <span onclick="closeModal()"
+        style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p><strong>Horario:</strong> <span id="modal-time"></span></p>
+      <p><strong>Docente:</strong> <span id="modal-teacher"></span></p>
+      <p><strong>Comentario:</strong> <span id="modal-comment"></span></p>
+    </div>
+  </div>
+  <script>
+    function showModal(title, time, teacher, comment) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-time').innerText = time;
+      document.getElementById('modal-teacher').innerText = teacher;
+      document.getElementById('modal-comment').innerText = comment;
+      document.getElementById('classModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('classModal').style.display = 'none';
+    }
+    window.onclick = function (event) {
+      let modal = document.getElementById('classModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
   <!-- Core -->
   <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -559,3 +753,66 @@
 </body>
 
 </html>
+
+<style>
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    border: 1px solid #dee2e6;
+    text-align: center;
+    vertical-align: top;
+    padding: 8px;
+    height: 80px;
+    position: relative;
+  }
+
+  .schedule-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+
+  .class-block {
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 2px 0;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .class-block:hover {
+    transform: translateY(-2px);
+    background-color: #084298;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
