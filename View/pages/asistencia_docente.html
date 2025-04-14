@@ -81,7 +81,7 @@
             <span class="mt-1 ms-1 sidebar-text">Skolaris</span>
           </a>
         </li>
-        <li class="nav-item  active ">
+        <li class="nav-item   ">
           <a href="../index.html" class="nav-link">
             <span class="sidebar-icon">
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@
                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
               </svg>
             </span>
-            <span class="sidebar-text">Inicio</span>
+            <span class="sidebar-text">Inicio< /span>
           </a>
         </li>
         <li class="nav-item ">
@@ -104,7 +104,7 @@
             <span class="sidebar-text">Ver Normativa</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <span class="nav-link  collapsed  d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
             data-bs-target="#views">
             <span>
@@ -127,14 +127,14 @@
               </svg>
             </span>
           </span>
-          <div class="multi-level collapse " role="list" id="views" aria-expanded="false">
+          <div class="multi-level collapse  " role="list" id="views" aria-expanded="false">
             <ul class="flex-column nav">
               <li class="nav-item">
                 <a class="nav-link" href="asistencia_usuario.html">
                   <span class="sidebar-text">Usuario</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="asistencia_docente.html">
                   <span class="sidebar-text">Docente</span>
                 </a>
@@ -446,12 +446,12 @@
             <div class="row align-items-center">
               <div class="col">
                 <h3 class="fs-5 fw-bold mb-0">Gestión de Asistencia</h3>
-              </div>
-              <div class="col-auto">
-                <button class="btn btn-sm btn-primary" id="btnNuevaAsistencia">
-                  <i class="fas fa-plus me-1"></i> Nueva Asistencia
+                <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="primero">
+                  <i class="fas fa-edit me-1"></i> Modificar
                 </button>
               </div>
+              
+
             </div>
           </div>
           <div class="card-body">
@@ -472,12 +472,10 @@
                     <td>Matemáticas</td>
                     <td>Lunes y Miércoles 8:00-9:30</td>
                     <td>
-                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="10A">
+                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="primero">
                         <i class="fas fa-clipboard-check me-1"></i> Pasar Asistencia
                       </button>
-                      <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="10A">
-                        <i class="fas fa-edit me-1"></i> Modificar
-                      </button>
+                      
                     </td>
                   </tr>
                   <tr>
@@ -485,11 +483,8 @@
                     <td>Ciencias</td>
                     <td>Martes y Jueves 10:00-11:30</td>
                     <td>
-                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="9B">
+                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="segundo">
                         <i class="fas fa-clipboard-check me-1"></i> Pasar Asistencia
-                      </button>
-                      <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="9B">
-                        <i class="fas fa-edit me-1"></i> Modificar
                       </button>
                     </td>
                   </tr>
@@ -498,12 +493,10 @@
                     <td>Historia</td>
                     <td>Viernes 7:30-9:00</td>
                     <td>
-                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="11C">
+                      <button class="btn btn-sm btn-outline-primary btn-pasar-asistencia" data-grupo="tercero">
                         <i class="fas fa-clipboard-check me-1"></i> Pasar Asistencia
                       </button>
-                      <button class="btn btn-sm btn-outline-secondary btn-modificar-asistencia" data-grupo="11C">
-                        <i class="fas fa-edit me-1"></i> Modificar
-                      </button>
+
                     </td>
                   </tr>
                 </tbody>
@@ -513,9 +506,10 @@
         </div>
       </div>
     </div>
-    
+
     <!--pasar asistencia -->
-    <div class="modal fade" id="modalAsistencia" tabindex="-1" aria-labelledby="modalAsistenciaLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAsistencia" tabindex="-1" aria-labelledby="modalAsistenciaLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -527,7 +521,7 @@
               <label for="fechaAsistencia" class="form-label">Fecha de la clase</label>
               <input type="date" class="form-control" id="fechaAsistencia" value="">
             </div>
-            
+
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead>
@@ -538,6 +532,7 @@
                   </tr>
                 </thead>
                 <tbody id="listaEstudiantes">
+                  <!-- se agrega una lista -->
                 </tbody>
               </table>
             </div>
@@ -549,9 +544,10 @@
         </div>
       </div>
     </div>
-    
-    <!-- modificar asistencia previa -->
-    <div class="modal fade" id="modalModificarAsistencia" tabindex="-1" aria-labelledby="modalModificarAsistenciaLabel" aria-hidden="true">
+
+    <!-- Modal para modificar asistencia previa -->
+    <div class="modal fade" id="modalModificarAsistencia" tabindex="-1" aria-labelledby="modalModificarAsistenciaLabel"
+      aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -571,7 +567,49 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            
+            <button type="button" class="btn btn-primary" id="btnConfirmarFecha">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para editar asistencia seleccionada -->
+    <div class="modal fade" id="modalEditarAsistencia" tabindex="-1" aria-labelledby="modalEditarAsistenciaLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEditarAsistenciaLabel">Modificar Asistencia - <span
+                id="nombreGrupoEditar"></span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-info">
+              <strong>Fecha seleccionada:</strong> <span id="fechaSeleccionada"></span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Estudiante</th>
+                    <th>Asistencia</th>
+                    <th>Observaciones</th>
+                  </tr>
+                </thead>
+                <tbody id="listaEstudiantesEditar">
+                  <!-- Lista de estudiantes se llenará dinámicamente -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="btnGuardarCambios">Guardar Cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -626,46 +664,250 @@
     </footer>
   </main>
 
-  <!-- Core -->
+  <!-- Scripts -->
   <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <!-- Vendor JS -->
-  <script src="../vendor/onscreen/dist/on-screen.umd.min.js"></script>
-
-  <!-- Slider -->
-  <script src="../vendor/vendor/nouislider/distribute/nouislider.min.js"></script>
-
-  <!-- Smooth scroll -->
-  <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
-  <!-- Charts -->
-  <script src="../vendor/chartist/dist/chartist.min.js"></script>
-  <script src="../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-
-  <!-- Datepicker -->
-  <script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-
-  <!-- Sweet Alerts 2 -->
   <script src="../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
-  <!-- Moment JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-
-  <!-- Vanilla JS Datepicker -->
-  <script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
-
-  <!-- Notyf -->
   <script src="../vendor/notyf/notyf.min.js"></script>
-
-  <!-- Simplebar -->
-  <script src="../vendor/simplebar/dist/simplebar.min.js"></script>
-
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-  <!-- Volt JS -->
   <script src="../assets/js/volt.js"></script>
+
+  <!-- Script ya de la asistencia -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const estudiantesPorGrupo = {
+        'primero': [
+          { id: 1, nombre: 'Juan Pérez', asistencia: false, observaciones: '' },
+          { id: 2, nombre: 'María Rodríguez', asistencia: false, observaciones: '' },
+          { id: 3, nombre: 'Carlos Gómez', asistencia: false, observaciones: '' }
+        ],
+        'segundo': [
+          { id: 4, nombre: 'Ana Martínez', asistencia: false, observaciones: '' },
+          { id: 5, nombre: 'Luis Hernández', asistencia: false, observaciones: '' }
+        ],
+        'tercero': [
+          { id: 6, nombre: 'Sofía Jiménez', asistencia: false, observaciones: '' },
+          { id: 7, nombre: 'Pedro Sánchez', asistencia: false, observaciones: '' },
+          { id: 8, nombre: 'Laura Díaz', asistencia: false, observaciones: '' }
+        ]
+      };
+
+      const fechasAsistencia = {
+        'primero': ['2025-04-10', '2025-04-03', '2025-03-27'],
+        'segundo': ['2025-04-09', '2025-04-02'],
+        'tercero': ['2025-04-08', '2025-04-01']
+      };
+
+      let grupoActual = '';
+      let fechaActual = '';
+
+      // las notificaciones
+      const notyf = new Notyf({
+        position: { x: 'right', y: 'top' },
+        duration: 3000
+      });
+
+
+      //pasar asistencia
+      document.querySelectorAll('.btn-pasar-asistencia').forEach(btn => {
+        btn.addEventListener('click', function () {
+          grupoActual = this.getAttribute('data-grupo');
+          document.getElementById('nombreGrupo').textContent = 'Grupo ' + grupoActual;
+
+          // la lista de estudiantess
+          const listaEstudiantes = document.getElementById('listaEstudiantes');
+          listaEstudiantes.innerHTML = '';
+
+          estudiantesPorGrupo[grupoActual].forEach(estudiante => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+             <td>${estudiante.nombre}</td>
+             <td>
+               <div class="form-check">
+                 <input class="form-check-input asistencia-checkbox" type="checkbox" 
+                   id="asistencia-${estudiante.id}" data-id="${estudiante.id}" checked>
+                 <label class="form-check-label" for="asistencia-${estudiante.id}">
+                   Presente
+                 </label>
+               </div>
+             </td>
+             <td>
+               <input type="text" class="form-control form-control-sm observacion-input" 
+                 data-id="${estudiante.id}" placeholder="Observaciones">
+             </td>
+           `;
+            listaEstudiantes.appendChild(row);
+          });
+
+          const modal = new bootstrap.Modal(document.getElementById('modalAsistencia'));
+          modal.show();
+        });
+      });
+
+      // modificar asistencia 
+      document.querySelectorAll('.btn-modificar-asistencia').forEach(btn => {
+        btn.addEventListener('click', function () {
+          grupoActual = this.getAttribute('data-grupo');
+
+          // apartado de fechas
+          const selectorFechas = document.getElementById('fechaModificacion');
+          selectorFechas.innerHTML = '<option value="">-- Seleccione una fecha --</option>';
+
+          fechasAsistencia[grupoActual].forEach(fecha => {
+            const option = document.createElement('option');
+            option.value = fecha;
+            option.textContent = new Date(fecha).toLocaleDateString('es-ES');
+            selectorFechas.appendChild(option);
+          });
+          const modal = new bootstrap.Modal(document.getElementById('modalModificarAsistencia'));
+          modal.show();
+        });
+      });
+      document.getElementById('btnConfirmarFecha').addEventListener('click', function () {
+        const fechaSeleccionada = document.getElementById('fechaModificacion').value;
+        if (!fechaSeleccionada) {
+          notyf.error('Por favor seleccione una fecha');
+          return;
+        }
+        fechaActual = fechaSeleccionada;
+
+        const modalModificar = bootstrap.Modal.getInstance(document.getElementById('modalModificarAsistencia'));
+        modalModificar.hide();
+
+        // edit
+        document.getElementById('nombreGrupoEditar').textContent = 'Grupo ' + grupoActual;
+        document.getElementById('fechaSeleccionada').textContent = new Date(fechaActual).toLocaleDateString('es-ES');
+
+        // lista de estudiantes
+        const listaEstudiantes = document.getElementById('listaEstudiantesEditar');
+        listaEstudiantes.innerHTML = '';
+
+        estudiantesPorGrupo[grupoActual].forEach(estudiante => {
+          const asistio = Math.random() > 0.5;
+          const observacion = asistio ? '' : 'Falta justificada';
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+             <td>${estudiante.nombre}</td>
+             <td>
+             <div class="form-check">
+               <input class="form-check-input asistencia-checkbox" type="checkbox" 
+                   id="edit-asistencia-${estudiante.id}" data-id="${estudiante.id}" ${asistio ? 'checked' : ''}>
+               <label class="form-check-label" for="edit-asistencia-${estudiante.id}">
+                 Presente
+               </label>
+             </div>
+           </td>
+           <td>
+             <input type="text" class="form-control form-control-sm observacion-input" 
+               data-id="${estudiante.id}" value="${observacion}" placeholder="Observaciones">
+           </td>
+         `;
+          listaEstudiantes.appendChild(row);
+        });
+
+        // Mostrar modal de edición
+        const modalEditar = new bootstrap.Modal(document.getElementById('modalEditarAsistencia'));
+        modalEditar.show();
+      });
+
+      // Evento para guardar nueva asistencia
+      document.getElementById('btnGuardarAsistencia').addEventListener('click', function () {
+        const fecha = document.getElementById('fechaAsistencia').value;
+
+        if (!fecha) {
+          notyf.error('Por favor seleccione una fecha válida');
+          return;
+        }
+
+        setTimeout(() => {
+          notyf.success('Asistencia registrada correctamente');
+          const modal = bootstrap.Modal.getInstance(document.getElementById('modalAsistencia'));
+          modal.hide();
+        }, );
+      });
+
+      // guardar cambios
+      document.getElementById('btnGuardarCambios').addEventListener('click', function () {
+        setTimeout(() => {
+          notyf.success('Cambios en la asistencia guardados correctamente');
+          const modal = bootstrap.Modal.getInstance(document.getElementById('modalEditarAsistencia'));
+          modal.hide();
+        }, );
+      });
+
+      // N asistencia
+      document.getElementById('btnNuevaAsistencia').addEventListener('click', function () {
+        Swal.fire({
+          title: 'Nueva Asistencia',
+          text: 'Seleccione el grupo para registrar asistencia',
+          input: 'select',
+          inputOptions: {
+            'primero': 'Grupo primero - Matemáticas',
+            'segundo': 'Grupo segundo - Ciencias',
+            'tercero': 'Grupo tercero - Historia'
+          },
+          inputPlaceholder: 'Seleccione un grupo',
+          showCancelButton: true,
+          confirmButtonText: 'Continuar',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed && result.value) {
+            document.querySelector(`.btn-pasar-asistencia[data-grupo="${result.value}"]`).click();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- Core -->
+<script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+
+<!-- Slider -->
+<script src="../vendor/vendor/nouislider/distribute/nouislider.min.js"></script>
+
+<!-- Smooth scroll -->
+<script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<!-- Charts -->
+<script src="../vendor/chartist/dist/chartist.min.js"></script>
+<script src="../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+<!-- Datepicker -->
+<script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<!-- Sweet Alerts 2 -->
+<script src="../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+<!-- Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+<!-- Vanilla JS Datepicker -->
+<script src="../vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+<!-- Notyf -->
+<script src="../vendor/notyf/notyf.min.js"></script>
+
+<!-- Simplebar -->
+<script src="../vendor/simplebar/dist/simplebar.min.js"></script>
+
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Volt JS -->
+<script src="../assets/js/volt.js"></script>
 
 
 </body>
