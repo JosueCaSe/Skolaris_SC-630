@@ -435,383 +435,406 @@
       </div>
     </nav>
 
-<!-- Contenido principal específico para docentes -->
-<div class="row">
-  <div class="col-12">
-    <div class="card border-0 shadow">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col">
-            <h3 class="fs-5 fw-bold mb-0" style="font-family: 'Poppins', sans-serif;">Mis Comunicados</h3>
-          </div>
-          <div class="col-auto">
-            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#crearComunicadoModal" style="font-family: 'Inter', sans-serif;">
-              <i class="fas fa-plus me-1"></i> Crear Comunicado
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <!-- Barra de búsqueda -->
-        <div class="row mb-4">
-          <div class="col-md-12">
-            <div class="input-group">
-              <input type="text" class="form-control" id="buscarMisComunicados" placeholder="Buscar por título o mensaje..." style="font-family: 'Roboto', sans-serif;">
-              <button class="btn btn-primary" type="button" id="btnBuscarDocente" style="font-family: 'Inter', sans-serif;">
-                <i class="fas fa-search me-1"></i> Buscar
-              </button>
+    <!-- Contenido principal específico para docentes -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 shadow">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Mis Comunicados
+                </h3>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#crearComunicadoModal"
+                  style="font-family: 'Inter', sans-serif;">
+                  <i class="fas fa-plus me-1"></i> Crear Comunicado
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Listado de comunicados del docente -->
-        <div class="list-group list-group-flush">
-          <!-- Comunicado 1 -->
-          <div class="list-group-item px-0 py-4">
-            <div class="row align-items-center">
-              <div class="col-auto">
-                <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
-              </div>
-              <div class="col ms-n2">
-                <h4 class="h5 mb-1" style="font-family: 'Poppins', sans-serif;">Cancelación de clases de matemáticas</h4>
-                <p class="small mb-0" style="font-family: 'Roboto', sans-serif;">
-                  <span class="text-muted">Publicado: 11 de abril, 2025</span> |
-                  <span class="text-success"><i class="fas fa-thumbs-up"></i> 12</span> |
-                  <span class="text-danger"><i class="fas fa-thumbs-down"></i> 3</span> |
-                  <span class="text-info"><i class="fas fa-comments"></i> 3</span>
-                </p>
-                <p class="mt-2 mb-0" style="font-family: 'Roboto', sans-serif;">Se informa que la clase de matemáticas del día 20 de abril se cancela por temas de salud.</p>
-              </div>
-              <div class="col-auto">
-                <div class="d-flex">
-                  <button class="btn btn-sm btn-outline-primary me-2 btn-action" data-bs-toggle="modal" data-bs-target="#editarComunicadoModal" style="font-family: 'Inter', sans-serif;">
-                    <i class="fas fa-edit me-1"></i> Modificar
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger btn-action" onclick="confirmarEliminar(1)" style="font-family: 'Inter', sans-serif;">
-                    <i class="fas fa-trash me-1"></i> Eliminar
+          <div class="card-body">
+            <!-- Barra de búsqueda -->
+            <div class="row mb-4">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="buscarMisComunicados"
+                    placeholder="Buscar por título o mensaje..." style="font-family: 'Roboto', sans-serif;">
+                  <button class="btn btn-primary" type="button" id="btnBuscarDocente"
+                    style="font-family: 'Inter', sans-serif;">
+                    <i class="fas fa-search me-1"></i> Buscar
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- Comentarios -->
-            <div class="collapse mt-3" id="comentariosDocente1">
-              <div class="card card-body border-0 shadow-sm">
-                <div class="list-group list-group-flush">
-                  <!-- Comentario 1 -->
-                  <div class="list-group-item px-0 py-3">
+            <!-- Listado de comunicados del docente -->
+            <div class="list-group list-group-flush">
+              <!-- Comunicado 1 -->
+              <div class="list-group-item px-0 py-4">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
+                  </div>
+                  <div class="col ms-n2">
+                    <h4 class="h5 mb-1" style="font-family: 'Poppins', sans-serif;">Cancelación de clases de matemáticas
+                    </h4>
+                    <p class="small mb-0" style="font-family: 'Roboto', sans-serif;">
+                      <span class="text-muted">Publicado: 11 de abril, 2025</span> |
+                      <span class="text-success"><i class="fas fa-thumbs-up"></i> 12</span> |
+                      <span class="text-danger"><i class="fas fa-thumbs-down"></i> 3</span> |
+                      <span class="text-info"><i class="fas fa-comments"></i> 3</span>
+                    </p>
+                    <p class="mt-2 mb-0" style="font-family: 'Roboto', sans-serif;">Se informa que la clase de
+                      matemáticas del día 20 de abril se cancela por temas de salud.</p>
+                  </div>
+                  <div class="col-auto">
                     <div class="d-flex">
-                      <img src="../assets/img/team/profile-picture-1.jpg" class="avatar rounded-circle me-3" alt="Usuario">
-                      <div>
-                        <p class="mb-1" style="font-family: 'Roboto', sans-serif;"><strong>Maria Vargas</strong> • <small class="text-muted">15 de abril, 2025</small></p>
-                        <p class="mb-0" style="font-family: 'Roboto', sans-serif;">Gracias por la información!!!</p>
+                      <button class="btn btn-sm btn-primary me-2 btn-action" data-bs-toggle="modal"
+                        data-bs-target="#editarComunicadoModal" style="font-family: 'Inter', sans-serif;">
+                        <i class="fas fa-edit me-1"></i> Modificar
+                      </button>
+                      <button class="btn btn-sm btn-danger btn-action" onclick="confirmarEliminar(1)"
+                        style="font-family: 'Inter', sans-serif;">
+                        <i class="fas fa-trash me-1"></i> Eliminar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comentarios -->
+                <div class="collapse mt-3" id="comentariosDocente1">
+                  <div class="card card-body border-0 shadow-sm">
+                    <div class="list-group list-group-flush">
+                      <!-- Comentario 1 -->
+                      <div class="list-group-item px-0 py-3">
+                        <div class="d-flex">
+                          <img src="../assets/img/team/profile-picture-1.jpg" class="avatar rounded-circle me-3"
+                            alt="Usuario">
+                          <div>
+                            <p class="mb-1" style="font-family: 'Roboto', sans-serif;"><strong>Maria Vargas</strong> •
+                              <small class="text-muted">15 de abril, 2025</small></p>
+                            <p class="mb-0" style="font-family: 'Roboto', sans-serif;">Gracias por la información!!!</p>
+                          </div>
+                        </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Comunicado 2 -->
+              <div class="list-group-item px-0 py-4">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
+                  </div>
+                  <div class="col ms-n2">
+                    <h4 class="h5 mb-1" style="font-family: 'Poppins', sans-serif;">Tarea para el fin de semana</h4>
+                    <p class="small mb-0" style="font-family: 'Roboto', sans-serif;">
+                      <span class="text-muted">Publicado: 5 de abril, 2025</span> |
+                      <span class="text-success"><i class="fas fa-thumbs-up"></i> 8</span> |
+                      <span class="text-danger"><i class="fas fa-thumbs-down"></i> 1</span> |
+                      <span class="text-info"><i class="fas fa-comments"></i> 2</span>
+                    </p>
+                    <p class="mt-2 mb-0" style="font-family: 'Roboto', sans-serif;">Por favor completar los ejercicios
+                      de la página 45 para el lunes.</p>
+                  </div>
+                  <div class="col-auto">
+                    <div class="d-flex">
+                      <button class="btn btn-sm btn-primary me-2 btn-action" data-bs-toggle="modal"
+                        data-bs-target="#editarComunicadoModal" style="font-family: 'Inter', sans-serif;">
+                        <i class="fas fa-edit me-1"></i> Modificar
+                      </button>
+                      <button class="btn btn-sm btn-danger btn-action" onclick="confirmarEliminar(2)"
+                        style="font-family: 'Inter', sans-serif;">
+                        <i class="fas fa-trash me-1"></i> Eliminar
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- Comunicado 2 -->
-          <div class="list-group-item px-0 py-4">
-            <div class="row align-items-center">
-              <div class="col-auto">
-                <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
+    <!-- parte Comunicado -->
+    <div class="modal fade" id="crearComunicadoModal" tabindex="-1" aria-labelledby="crearComunicadoModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="crearComunicadoModalLabel" style="font-family: 'Poppins', sans-serif;">Crear
+              Nuevo Comunicado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formCrearComunicado">
+              <div class="mb-3">
+                <label for="tituloComunicado" class="form-label"
+                  style="font-family: 'Inter', sans-serif;">Título</label>
+                <input type="text" class="form-control" id="tituloComunicado" required
+                  style="font-family: 'Roboto', sans-serif;">
               </div>
-              <div class="col ms-n2">
-                <h4 class="h5 mb-1" style="font-family: 'Poppins', sans-serif;">Tarea para el fin de semana</h4>
-                <p class="small mb-0" style="font-family: 'Roboto', sans-serif;">
-                  <span class="text-muted">Publicado: 5 de abril, 2025</span> |
-                  <span class="text-success"><i class="fas fa-thumbs-up"></i> 8</span> |
-                  <span class="text-danger"><i class="fas fa-thumbs-down"></i> 1</span> |
-                  <span class="text-info"><i class="fas fa-comments"></i> 2</span>
-                </p>
-                <p class="mt-2 mb-0" style="font-family: 'Roboto', sans-serif;">Por favor completar los ejercicios de la página 45 para el lunes.</p>
+              <div class="mb-3">
+                <label for="mensajeComunicado" class="form-label"
+                  style="font-family: 'Inter', sans-serif;">Mensaje</label>
+                <textarea class="form-control" id="mensajeComunicado" rows="5" required
+                  style="font-family: 'Roboto', sans-serif;"></textarea>
               </div>
-              <div class="col-auto">
-                <div class="d-flex">
-                  <button class="btn btn-sm btn-outline-primary me-2 btn-action" data-bs-toggle="modal" data-bs-target="#editarComunicadoModal" style="font-family: 'Inter', sans-serif;">
-                    <i class="fas fa-edit me-1"></i> Modificar
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger btn-action" onclick="confirmarEliminar(2)" style="font-family: 'Inter', sans-serif;">
-                    <i class="fas fa-trash me-1"></i> Eliminar
-                  </button>
+              <div class="mb-3">
+                <label class="form-label" style="font-family: 'Inter', sans-serif;">Destinatarios</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="1A" id="grupo1A" checked>
+                  <label class="form-check-label" for="grupo1" style="font-family: 'Roboto', sans-serif;">
+                    Matemática
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="1B" id="grupo1B">
+                  <label class="form-check-label" for="grupo2" style="font-family: 'Roboto', sans-serif;">
+                    Estudios sociales
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="2A" id="grupo2A">
+                  <label class="form-check-label" for="grupo3" style="font-family: 'Roboto', sans-serif;">
+                    Matemática 2
+                  </label>
                 </div>
               </div>
-            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+              style="font-family: 'Inter', sans-serif;">Cancelar</button>
+            <button type="button" class="btn btn-primary" onclick="crearComunicado()"
+              style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Publicar
+              Comunicado</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- parte Comunicado -->
-<div class="modal fade" id="crearComunicadoModal" tabindex="-1" aria-labelledby="crearComunicadoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="crearComunicadoModalLabel" style="font-family: 'Poppins', sans-serif;">Crear Nuevo Comunicado</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formCrearComunicado">
-          <div class="mb-3">
-            <label for="tituloComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Título</label>
-            <input type="text" class="form-control" id="tituloComunicado" required style="font-family: 'Roboto', sans-serif;">
+    <!-- Modal Editar Comunicado -->
+    <div class="modal fade" id="editarComunicadoModal" tabindex="-1" aria-labelledby="editarComunicadoModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editarComunicadoModalLabel" style="font-family: 'Poppins', sans-serif;">Editar
+              Comunicado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="mb-3">
-            <label for="mensajeComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Mensaje</label>
-            <textarea class="form-control" id="mensajeComunicado" rows="5" required style="font-family: 'Roboto', sans-serif;"></textarea>
+          <div class="modal-body">
+            <form id="formEditarComunicado">
+              <div class="mb-3">
+                <label for="editTituloComunicado" class="form-label"
+                  style="font-family: 'Inter', sans-serif;">Título</label>
+                <input type="text" class="form-control" id="editTituloComunicado"
+                  value="Cancelación de clases de matemáticas" required style="font-family: 'Roboto', sans-serif;">
+              </div>
+              <div class="mb-3">
+                <label for="editMensajeComunicado" class="form-label"
+                  style="font-family: 'Inter', sans-serif;">Mensaje</label>
+                <textarea class="form-control" id="editMensajeComunicado" rows="5" required
+                  style="font-family: 'Roboto', sans-serif;">Se informa que la clase de matemáticas del día 20 de abril se cancela por temas de salud.</textarea>
+              </div>
+            </form>
           </div>
-          <div class="mb-3">
-            <label class="form-label" style="font-family: 'Inter', sans-serif;">Destinatarios</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="1A" id="grupo1A" checked>
-              <label class="form-check-label" for="grupo1" style="font-family: 'Roboto', sans-serif;">
-                Matemática
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="1B" id="grupo1B">
-              <label class="form-check-label" for="grupo2" style="font-family: 'Roboto', sans-serif;">
-                Estudios sociales
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="2A" id="grupo2A">
-              <label class="form-check-label" for="grupo3" style="font-family: 'Roboto', sans-serif;">
-                Matemática 2
-              </label>
-            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+              style="font-family: 'Inter', sans-serif;">Cancelar</button>
+            <button type="button" class="btn btn-primary" onclick="guardarCambios()"
+              style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Guardar
+              Cambios</button>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Cancelar</button>
-        <button type="button" class="btn btn-primary" onclick="crearComunicado()" style="font-family: 'Inter', sans-serif;">Publicar Comunicado</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Modal Editar Comunicado -->
-<div class="modal fade" id="editarComunicadoModal" tabindex="-1" aria-labelledby="editarComunicadoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editarComunicadoModalLabel" style="font-family: 'Poppins', sans-serif;">Editar Comunicado</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formEditarComunicado">
-          <div class="mb-3">
-            <label for="editTituloComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Título</label>
-            <input type="text" class="form-control" id="editTituloComunicado" value="Cancelación de clases de matemáticas" required style="font-family: 'Roboto', sans-serif;">
-          </div>
-          <div class="mb-3">
-            <label for="editMensajeComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Mensaje</label>
-            <textarea class="form-control" id="editMensajeComunicado" rows="5" required style="font-family: 'Roboto', sans-serif;">Se informa que la clase de matemáticas del día 20 de abril se cancela por temas de salud.</textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Cancelar</button>
-        <button type="button" class="btn btn-primary" onclick="guardarCambios()" style="font-family: 'Inter', sans-serif;">Guardar Cambios</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Footer (igual que en tu referencia) -->
-    <footer class="bg-white rounded shadow p-3 mt-4">
-      <!-- ... contenido del footer ... -->
-    </footer>
-  </main>
-
-  <!-- Scripts (igual que en tu referencia) -->
-  <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
-  <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- ... otros scripts ... -->
-  <script src="../assets/js/volt.js"></script>
-  <script src="../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
-  <!-- Script docente después se mejoran mas -->
-  <script>
-    // Configuración de SweetAlert
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
-    });
-
-    // Funn eliminacion confi
-    function confirmarEliminar() {
-      swalWithBootstrapButtons.fire({
-        title: '¿Estás seguro?',
-        text: "¡No podrás revertir esta acción!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Sí, eliminar',
-        cancelButtonText: 'Cancelar',
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            '¡Eliminado!',
-            'El comunicado ha sido eliminado.',
-            'success'
-          );
-        }
-      });
-    }
-
-    // funcion comunicado 
-    function crearComunicado() {
-      const titulo = document.getElementById('tituloComunicado').value;
-      const mensaje = document.getElementById('mensajeComunicado').value;
-
-      if (!titulo || !mensaje) {
-        Swal.fire('Error', 'Debes completar todos los campos', 'error');
-        return;
-      }
-
-      Swal.fire(
-        '¡Publicado!',
-        'Tu comunicado ha sido publicado con éxito.',
-        'success'
-      );
-
-
-      const modal = bootstrap.Modal.getInstance(document.getElementById('crearComunicadoModal'));
-      modal.hide(); // Bootstrap para cerrar ra
-
-      // Limpiar fun
-      setTimeout(() => {
-        document.getElementById('formCrearComunicado').reset();
-      }, 500);
-    }
-
-    // fun editar
-    function guardarCambios() {
-      const titulo = document.getElementById('editTituloComunicado').value;
-      const mensaje = document.getElementById('editMensajeComunicado').value;
-
-      if (!titulo || !mensaje) {
-        Swal.fire('Error', 'Debes completar todos los campos', 'error');
-        return;
-      }
-
-      Swal.fire(
-        '¡Guardado!',
-        'Los cambios han sido guardados.',
-        'success'
-      );
-
-      const modal = bootstrap.Modal.getInstance(document.getElementById('editarComunicadoModal'));
-      modal.hide(); // Bootstrap para cerrar ra 
-    }
-
-    document.getElementById('btnBuscarDocente').addEventListener('click', function () {
-      const termino = document.getElementById('buscarMisComunicados').value.toLowerCase();
-      const comunicados = document.querySelectorAll('.comunicado-card');
-      let resultados = 0;
-
-      comunicados.forEach(comunicado => {
-        const texto = comunicado.textContent.toLowerCase();
-        if (texto.includes(termino)) {
-          comunicado.style.display = '';
-          resultados++;
-        } else {
-          comunicado.style.display = 'none';
-        }
+    <!-- Scripts (igual que en tu referencia) -->
+    <script src="../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- ... otros scripts ... -->
+    <script src="../assets/js/volt.js"></script>
+    <script src="../vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script>
+      // Configuración de SweetAlert
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-primary'
+        },
+        buttonsStyling: false
       });
 
-      const notyf = new Notyf({
-        position: { x: 'right', y: 'bottom' },
-        types: [{
-          type: 'info',
-          background: '#262B40',
-          icon: { className: 'fas fa-comment-dots', tagName: 'span', color: '#fff' },
-          dismissible: false
-        }]
-      });
-      notyf.open({
-        type: 'info',
-        message: resultados > 0 ? `Búsqueda completada (${resultados} resultados)` : 'Búsqueda completada'
-      });
-    });
-
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('hidden.bs.modal', function () {
-        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
-          backdrop.remove();
+      // Funn eliminacion confi
+      function confirmarEliminar() {
+        swalWithBootstrapButtons.fire({
+          title: '¿Estás seguro?',
+          text: "¡No podrás revertir esta acción!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Eliminar',
+          cancelButtonText: 'Cancelar',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+              '¡Eliminado!',
+              'El comunicado ha sido eliminado.',
+              'success'
+            );
+          }
         });
-        document.body.style.overflow = 'auto';
-        document.body.style.paddingRight = '0';
+      }
+
+      // funcion comunicado 
+      function crearComunicado() {
+        const titulo = document.getElementById('tituloComunicado').value;
+        const mensaje = document.getElementById('mensajeComunicado').value;
+
+        if (!titulo || !mensaje) {
+          Swal.fire('Error', 'Debes completar todos los campos', 'error');
+          return;
+        }
+
+        Swal.fire(
+          '¡Publicado!',
+          'Tu comunicado ha sido publicado con éxito.',
+          'success'
+        );
+
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById('crearComunicadoModal'));
+        modal.hide(); // Bootstrap para cerrar ra
+
+        // Limpiar fun
+        setTimeout(() => {
+          document.getElementById('formCrearComunicado').reset();
+        }, 500);
+      }
+
+      // fun editar
+      function guardarCambios() {
+        const titulo = document.getElementById('editTituloComunicado').value;
+        const mensaje = document.getElementById('editMensajeComunicado').value;
+
+        if (!titulo || !mensaje) {
+          Swal.fire('Error', 'Debes completar todos los campos', 'error');
+          return;
+        }
+
+        Swal.fire(
+          '¡Guardado!',
+          'Los cambios han sido guardados.',
+          'success'
+        );
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById('editarComunicadoModal'));
+        modal.hide(); // Bootstrap para cerrar ra 
+      }
+
+      document.getElementById('btnBuscarDocente').addEventListener('click', function () {
+        const termino = document.getElementById('buscarMisComunicados').value.toLowerCase();
+        const comunicados = document.querySelectorAll('.comunicado-card');
+        let resultados = 0;
+
+        comunicados.forEach(comunicado => {
+          const texto = comunicado.textContent.toLowerCase();
+          if (texto.includes(termino)) {
+            comunicado.style.display = '';
+            resultados++;
+          } else {
+            comunicado.style.display = 'none';
+          }
+        });
+
+        const notyf = new Notyf({
+          position: { x: 'right', y: 'bottom' },
+          types: [{
+            type: 'info',
+            background: '#262B40',
+            icon: { className: 'fas fa-comment-dots', tagName: 'span', color: '#fff' },
+            dismissible: false
+          }]
+        });
+        notyf.open({
+          type: 'info',
+          message: resultados > 0 ? `Búsqueda completada (${resultados} resultados)` : 'Búsqueda completada'
+        });
       });
-    });
-  </script>
+
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('hidden.bs.modal', function () {
+          document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+            backdrop.remove();
+          });
+          document.body.style.overflow = 'auto';
+          document.body.style.paddingRight = '0';
+        });
+      });
+    </script>
 
 
-  <!-- Soporte Técnico -->
-  <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
-    <div class="card-body bg-gray-800 text-white pt-4">
-      <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
-        href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <p class="m-0 mb-1 me-4 fs-7" style="font-family: 'Inter', sans-serif; color: white;">Soporte Técnico</p>
-      </div>
-      <a href="Soporte.html"
-        class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
-        Contactar Soporte
-        <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-            d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-  <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
-    <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
-      <span class="fw-bold d-inline-flex align-items-center h6" style="font-family: 'Inter', sans-serif;">
-        Soporte Técnico
-      </span>
-    </div>
-  </div>
-
-
-  <!-- Footer -->
-  <footer class="bg-white rounded shadow p-3 mt-4 mb-5">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6 mb-2 mb-md-0">
-        <p class="mb-0 text-center text-md-start small" style="font-family: 'Roboto', sans-serif; ">© 2025 <a
-            class="text-primary fw-bold" href="#" target="_blank"
-            style="font-family: 'Roboto', sans-serif;">Skolaris</a> - Derechos Reservados</p>
-      </div>
-      <div class="col-12 col-md-6">
-        <ul class="list-inline list-group-flush list-group-borderless mb-0 text-center text-md-end">
-          <li class="list-inline-item px-2">
-            <a href="tel:+50600000000" class="text-decoration-none small"
-              style="font-family: 'Roboto', sans-serif;">Llamar: +506 0000-0000</a>
-          </li>
-          <li class="list-inline-item px-2">
-            <a href="mailto:info@escuela.com" class="text-decoration-none small"
-              style="font-family: 'Roboto', sans-serif;">Correo: info@escuela.com</a>
-          </li>
-          <li class="list-inline-item px-2">
-            <a href="https://facebook.com/escuela" target="_blank" class="text-decoration-none small"
-              style="font-family: 'Roboto', sans-serif;">Facebook</a>
-          </li>
-        </ul>
+    <!-- Soporte Técnico -->
+    <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+      <div class="card-body bg-gray-800 text-white pt-4">
+        <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
+          href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="m-0 mb-1 me-4 fs-7" style="font-family: 'Inter', sans-serif; color: white;">Soporte Técnico</p>
+        </div>
+        <a href="Soporte.html"
+          class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100"
+          style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">
+          Contactar Soporte
+          <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
       </div>
     </div>
-  </footer>
+    <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
+      <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
+        <span class="fw-bold d-inline-flex align-items-center h6" style="font-family: 'Inter', sans-serif;">
+          Soporte Técnico
+        </span>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-white rounded shadow p-3 mt-4 mb-5">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-2 mb-md-0">
+          <p class="mb-0 text-center text-md-start small" style="font-family: 'Roboto', sans-serif; ">© 2025 <a
+              class="text-primary fw-bold" href="#" target="_blank"
+              style="font-family: 'Roboto', sans-serif;">Skolaris</a> - Derechos Reservados</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <ul class="list-inline list-group-flush list-group-borderless mb-0 text-center text-md-end">
+            <li class="list-inline-item px-2">
+              <a href="tel:+50600000000" class="text-decoration-none small"
+                style="font-family: 'Roboto', sans-serif;">Llamar: +506 0000-0000</a>
+            </li>
+            <li class="list-inline-item px-2">
+              <a href="mailto:info@escuela.com" class="text-decoration-none small"
+                style="font-family: 'Roboto', sans-serif;">Correo: info@escuela.com</a>
+            </li>
+            <li class="list-inline-item px-2">
+              <a href="https://facebook.com/escuela" target="_blank" class="text-decoration-none small"
+                style="font-family: 'Roboto', sans-serif;">Facebook</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </main>
 
   <!-- Core -->
