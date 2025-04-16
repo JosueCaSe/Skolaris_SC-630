@@ -440,45 +440,40 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">CALIFICACIONES - DOCENTE</h3>
+            <h3 class="fs-5 fw-bold mb-0" style="font-family: 'Poppins', sans-serif;">Gestión de calificaciones</h3>
           </div>
           <div class="card-body">
-            <h5 class="text-center">Grupos Asignados</h5>
+            <h5 class="text-center" style="font-family: 'Poppins', sans-serif;">Grupos Asignados</h5>
             <!-- Tabla con los grupos asignados y botones para registrar/modificar calificaciones -->
-            <table class="table table-bordered align-middle">
-              <thead class="table-dark text-center">
+            <table class="table table-bordered align-middle" style="font-family: 'Roboto', sans-serif;">
+              <thead class="thead-light">
                 <tr>
                   <th>Grupo</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- Aquí agregamos los grupos y botones de forma estática -->
                 <tr>
                   <td>Grupo 1A</td>
                   <td class="text-center">
-                    <button class="btn btn-outline-primary btnRegistrar" data-grupo="1A">Registrar
-                      Calificaciones</button>
-                    <button class="btn btn-outline-warning btnModificar" data-grupo="1A">Modificar
-                      Calificaciones</button>
+                    <button class="btn btn-primary btnRegistrar" data-grupo="1A" style="font-family: 'Inter', sans-serif;">Registrar Calificaciones</button>
+                    <button class="btn btn-outline-warning btnModificar" data-grupo="1A" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Modificar Calificaciones</button>
                   </td>
                 </tr>
                 <tr>
                   <td>Grupo 2B</td>
                   <td class="text-center">
-                    <button class="btn btn-outline-primary btnRegistrar" data-grupo="2B">Registrar
-                      Calificaciones</button>
-                    <button class="btn btn-outline-warning btnModificar" data-grupo="2B">Modificar
-                      Calificaciones</button>
+                    <button class="btn btn-primary btnRegistrar" data-grupo="2B" style="font-family: 'Inter', sans-serif;">Registrar Calificaciones</button>
+                    <button class="btn btn-outline-warning btnModificar" data-grupo="2B" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Modificar Calificaciones</button>
                   </td>
                 </tr>
               </tbody>
             </table>
-
+    
             <!-- Sección para mostrar el formulario de selección de semestre -->
             <div id="formularioSeleccionSemestre" class="d-none mt-4">
-              <h5 class="text-center">Seleccionar Semestre para Modificar Calificaciones</h5>
-              <form id="formSeleccionSemestre">
+              <h5 class="text-center" style="font-family: 'Poppins', sans-serif;">Seleccionar Semestre para Modificar Calificaciones</h5>
+              <form id="formSeleccionSemestre" style="font-family: 'Roboto', sans-serif;">
                 <div class="mb-3">
                   <label for="semestre" class="form-label">Seleccione el semestre</label>
                   <select id="semestre" class="form-control" required>
@@ -488,19 +483,18 @@
                   </select>
                 </div>
                 <div class="text-center mt-3">
-                  <button type="button" class="btn btn-success" id="btnConfirmar">Confirmar</button>
-                  <button type="button" class="btn btn-secondary" id="btnCancelarSeleccion">Cancelar</button>
+                  <button type="button" class="btn btn-success" id="btnConfirmar" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Confirmar</button>
+                  <button type="button" class="btn btn-secondary" id="btnCancelarSeleccion" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Cancelar</button>
                 </div>
               </form>
             </div>
-
+    
             <!-- Sección para mostrar el formulario de calificaciones (registrar o modificar) -->
             <div id="formularioCalificaciones" class="d-none mt-4">
-              <h5 class="text-center" id="tituloFormulario">Registrar Calificaciones - Grupo</h5>
-              <form id="formCalificaciones">
-                <!-- Tabla para mostrar los estudiantes con su respectivo campo de calificación y comentarios -->
+              <h5 class="text-center" id="tituloFormulario" style="font-family: 'Poppins', sans-serif;">Registrar Calificaciones - Grupo</h5>
+              <form id="formCalificaciones" style="font-family: 'Roboto', sans-serif;">
                 <table class="table table-bordered align-middle">
-                  <thead class="table-secondary text-center">
+                  <thead class="thead-light">
                     <tr>
                       <th>Nombre del Estudiante</th>
                       <th>Calificación</th>
@@ -511,19 +505,19 @@
                     <!-- Aquí se cargarán los estudiantes dinámicamente con JS -->
                   </tbody>
                 </table>
-
-                <!-- Botones de acción -->
                 <div class="text-center mt-3">
-                  <button type="submit" class="btn btn-success">Guardar</button>
-                  <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+                  <button type="submit" class="btn btn-success" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Guardar</button>
+                  <button type="button" class="btn btn-secondary" id="btnCancelar" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Cancelar</button>
                 </div>
               </form>
             </div>
-
+    
           </div>
         </div>
       </div>
     </div>
+    
+
 
     <!-- Soporte Técnico -->
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">

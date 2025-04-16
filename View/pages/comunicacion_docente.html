@@ -435,117 +435,108 @@
       </div>
     </nav>
 
-
-    <!-- Contenido principal específico para docentes -->
-    <div class="row">
-      <div class="col-12">
-        <div class="card border-0 shadow">
-          <div class="card-header">
-            <div class="row align-items-center">
-              <div class="col">
-                <h3 class="fs-5 fw-bold mb-0">Mis Comunicados</h3>
-              </div>
-              <div class="col-auto">
-                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#crearComunicadoModal">
-                  <i class="fas fa-plus me-1"></i> Crear Comunicado
-                </button>
-              </div>
+<!-- Contenido principal específico para docentes -->
+<div class="row">
+  <div class="col-12">
+    <div class="card border-0 shadow">
+      <div class="card-header">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="fs-5 fw-bold mb-0" style="font-family: 'Poppins', sans-serif;">Mis Comunicados</h3>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#crearComunicadoModal" style="font-family: 'Inter', sans-serif;">
+              <i class="fas fa-plus me-1"></i> Crear Comunicado
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <!-- Barra de búsqueda -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="input-group">
+              <input type="text" class="form-control" id="buscarMisComunicados" placeholder="Buscar por título o mensaje..." style="font-family: 'Roboto', sans-serif;">
+              <button class="btn btn-primary" type="button" id="btnBuscarDocente" style="font-family: 'Inter', sans-serif;">
+                <i class="fas fa-search me-1"></i> Buscar
+              </button>
             </div>
           </div>
-          <div class="card-body">
-            <!-- Barra de búsqueda -->
-            <div class="row mb-4">
-              <div class="col-md-12">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="buscarMisComunicados"
-                    placeholder="Buscar por título o mensaje...">
-                  <button class="btn btn-primary" type="button" id="btnBuscarDocente">
-                    <i class="fas fa-search me-1"></i> Buscar
+        </div>
+
+        <!-- Listado de comunicados del docente -->
+        <div class="list-group list-group-flush">
+          <!-- Comunicado 1 -->
+          <div class="list-group-item px-0 py-4">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
+              </div>
+              <div class="col ms-n2">
+                <h4 class="h5 mb-1" style="font-family: 'Poppins', sans-serif;">Cancelación de clases de matemáticas</h4>
+                <p class="small mb-0" style="font-family: 'Roboto', sans-serif;">
+                  <span class="text-muted">Publicado: 11 de abril, 2025</span> |
+                  <span class="text-success"><i class="fas fa-thumbs-up"></i> 12</span> |
+                  <span class="text-danger"><i class="fas fa-thumbs-down"></i> 3</span> |
+                  <span class="text-info"><i class="fas fa-comments"></i> 3</span>
+                </p>
+                <p class="mt-2 mb-0" style="font-family: 'Roboto', sans-serif;">Se informa que la clase de matemáticas del día 20 de abril se cancela por temas de salud.</p>
+              </div>
+              <div class="col-auto">
+                <div class="d-flex">
+                  <button class="btn btn-sm btn-outline-primary me-2 btn-action" data-bs-toggle="modal" data-bs-target="#editarComunicadoModal" style="font-family: 'Inter', sans-serif;">
+                    <i class="fas fa-edit me-1"></i> Modificar
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger btn-action" onclick="confirmarEliminar(1)" style="font-family: 'Inter', sans-serif;">
+                    <i class="fas fa-trash me-1"></i> Eliminar
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- Listado de comunicados del docente -->
-            <div class="list-group list-group-flush">
-              <!-- Comunicado 1 -->
-              <div class="list-group-item px-0 py-4 ">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
-                  </div>
-                  <div class="col ms-n2">
-                    <h4 class="h5 mb-1">Cancelación de clases de matemáticas</h4>
-                    <p class="small mb-0">
-                      <span class="text-muted">Publicado: 11 de abril, 2025</span> |
-                      <span class="text-success"><i class="fas fa-thumbs-up"></i> 12</span> |
-                      <span class="text-danger"><i class="fas fa-thumbs-down"></i> 3</span> |
-                      <span class="text-info"><i class="fas fa-comments"></i> 3</span>
-                    </p>
-                    <p class="mt-2 mb-0">Se informa que la clase de matemáticas del día 20 de abril se cancela por
-                      temas de salud.</p>
-                  </div>
-                  <div class="col-auto">
+            <!-- Comentarios -->
+            <div class="collapse mt-3" id="comentariosDocente1">
+              <div class="card card-body border-0 shadow-sm">
+                <div class="list-group list-group-flush">
+                  <!-- Comentario 1 -->
+                  <div class="list-group-item px-0 py-3">
                     <div class="d-flex">
-                      <button class="btn btn-sm btn-outline-primary me-2 btn-action" data-bs-toggle="modal"
-                        data-bs-target="#editarComunicadoModal">
-                        <i class="fas fa-edit me-1"></i> Modificar
-                      </button>
-                      <button class="btn btn-sm btn-outline-danger btn-action" onclick="confirmarEliminar(1)">
-                        <i class="fas fa-trash me-1"></i> Eliminar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Comentarios -->
-                <div class="collapse mt-3" id="comentariosDocente1">
-                  <div class="card card-body border-0 shadow-sm">
-                    <div class="list-group list-group-flush">
-                      <!-- Comentario 1 -->
-                      <div class="list-group-item px-0 py-3">
-                        <div class="d-flex">
-                          <img src="../assets/img/team/profile-picture-1.jpg" class="avatar rounded-circle me-3"
-                            alt="Usuario">
-                          <div>
-                            <p class="mb-1"><strong>Maria Vargas</strong> • <small class="text-muted">15 de abril,
-                                2025</small></p>
-                            <p class="mb-0">Gracias por la información!!!</p>
-                          </div>
-                        </div>
+                      <img src="../assets/img/team/profile-picture-1.jpg" class="avatar rounded-circle me-3" alt="Usuario">
+                      <div>
+                        <p class="mb-1" style="font-family: 'Roboto', sans-serif;"><strong>Maria Vargas</strong> • <small class="text-muted">15 de abril, 2025</small></p>
+                        <p class="mb-0" style="font-family: 'Roboto', sans-serif;">Gracias por la información!!!</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <!-- Comunicado 2  -->
-              <div class="list-group-item px-0 py-4 ">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
-                  </div>
-                  <div class="col ms-n2">
-                    <h4 class="h5 mb-1">Tarea para el fin de semana</h4>
-                    <p class="small mb-0">
-                      <span class="text-muted">Publicado: 5 de abril, 2025</span> |
-                      <span class="text-success"><i class="fas fa-thumbs-up"></i> 8</span> |
-                      <span class="text-danger"><i class="fas fa-thumbs-down"></i> 1</span> |
-                      <span class="text-info"><i class="fas fa-comments"></i> 2</span>
-                    </p>
-                    <p class="mt-2 mb-0">Por favor completar los ejercicios de la página 45 para el lunes.</p>
-                  </div>
-                  <div class="col-auto">
-                    <div class="d-flex">
-                      <button class="btn btn-sm btn-outline-primary me-2 btn-action" data-bs-toggle="modal"
-                        data-bs-target="#editarComunicadoModal">
-                        <i class="fas fa-edit me-1"></i> Modificar
-                      </button>
-                      <button class="btn btn-sm btn-outline-danger btn-action" onclick="confirmarEliminar(2)">
-                        <i class="fas fa-trash me-1"></i> Eliminar
-                      </button>
-                    </div>
-                  </div>
+          <!-- Comunicado 2 -->
+          <div class="list-group-item px-0 py-4">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <img src="../assets/img/team/profile-picture-2.jpg" class="avatar rounded-circle" alt="Docente">
+              </div>
+              <div class="col ms-n2">
+                <h4 class="h5 mb-1" style="font-family: 'Poppins', sans-serif;">Tarea para el fin de semana</h4>
+                <p class="small mb-0" style="font-family: 'Roboto', sans-serif;">
+                  <span class="text-muted">Publicado: 5 de abril, 2025</span> |
+                  <span class="text-success"><i class="fas fa-thumbs-up"></i> 8</span> |
+                  <span class="text-danger"><i class="fas fa-thumbs-down"></i> 1</span> |
+                  <span class="text-info"><i class="fas fa-comments"></i> 2</span>
+                </p>
+                <p class="mt-2 mb-0" style="font-family: 'Roboto', sans-serif;">Por favor completar los ejercicios de la página 45 para el lunes.</p>
+              </div>
+              <div class="col-auto">
+                <div class="d-flex">
+                  <button class="btn btn-sm btn-outline-primary me-2 btn-action" data-bs-toggle="modal" data-bs-target="#editarComunicadoModal" style="font-family: 'Inter', sans-serif;">
+                    <i class="fas fa-edit me-1"></i> Modificar
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger btn-action" onclick="confirmarEliminar(2)" style="font-family: 'Inter', sans-serif;">
+                    <i class="fas fa-trash me-1"></i> Eliminar
+                  </button>
                 </div>
               </div>
             </div>
@@ -553,87 +544,86 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- parte Comunicado -->
-    <div class="modal fade" id="crearComunicadoModal" tabindex="-1" aria-labelledby="crearComunicadoModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="crearComunicadoModalLabel">Crear Nuevo Comunicado</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- parte Comunicado -->
+<div class="modal fade" id="crearComunicadoModal" tabindex="-1" aria-labelledby="crearComunicadoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="crearComunicadoModalLabel" style="font-family: 'Poppins', sans-serif;">Crear Nuevo Comunicado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formCrearComunicado">
+          <div class="mb-3">
+            <label for="tituloComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Título</label>
+            <input type="text" class="form-control" id="tituloComunicado" required style="font-family: 'Roboto', sans-serif;">
           </div>
-          <div class="modal-body">
-            <form id="formCrearComunicado">
-              <div class="mb-3">
-                <label for="tituloComunicado" class="form-label">Título</label>
-                <input type="text" class="form-control" id="tituloComunicado" required>
-              </div>
-              <div class="mb-3">
-                <label for="mensajeComunicado" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="mensajeComunicado" rows="5" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Destinatarios</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="1A" id="grupo1A" checked>
-                  <label class="form-check-label" for="grupo1">
-                    Matemática
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="1B" id="grupo1B">
-                  <label class="form-check-label" for="grupo2">
-                    Estudios sociales
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="2A" id="grupo2A">
-                  <label class="form-check-label" for="grupo3">
-                    Matemática 2
-                  </label>
-                </div>
-              </div>
-            </form>
+          <div class="mb-3">
+            <label for="mensajeComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Mensaje</label>
+            <textarea class="form-control" id="mensajeComunicado" rows="5" required style="font-family: 'Roboto', sans-serif;"></textarea>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" onclick="crearComunicado()">Publicar Comunicado</button>
+          <div class="mb-3">
+            <label class="form-label" style="font-family: 'Inter', sans-serif;">Destinatarios</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="1A" id="grupo1A" checked>
+              <label class="form-check-label" for="grupo1" style="font-family: 'Roboto', sans-serif;">
+                Matemática
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="1B" id="grupo1B">
+              <label class="form-check-label" for="grupo2" style="font-family: 'Roboto', sans-serif;">
+                Estudios sociales
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2A" id="grupo2A">
+              <label class="form-check-label" for="grupo3" style="font-family: 'Roboto', sans-serif;">
+                Matemática 2
+              </label>
+            </div>
           </div>
-        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="crearComunicado()" style="font-family: 'Inter', sans-serif;">Publicar Comunicado</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Modal Editar Comunicado -->
-    <div class="modal fade" id="editarComunicadoModal" tabindex="-1" aria-labelledby="editarComunicadoModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editarComunicadoModalLabel">Editar Comunicado</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Modal Editar Comunicado -->
+<div class="modal fade" id="editarComunicadoModal" tabindex="-1" aria-labelledby="editarComunicadoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarComunicadoModalLabel" style="font-family: 'Poppins', sans-serif;">Editar Comunicado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formEditarComunicado">
+          <div class="mb-3">
+            <label for="editTituloComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Título</label>
+            <input type="text" class="form-control" id="editTituloComunicado" value="Cancelación de clases de matemáticas" required style="font-family: 'Roboto', sans-serif;">
           </div>
-          <div class="modal-body">
-            <form id="formEditarComunicado">
-              <div class="mb-3">
-                <label for="editTituloComunicado" class="form-label">Título</label>
-                <input type="text" class="form-control" id="editTituloComunicado"
-                  value="Cancelación de clases de matemáticas" required>
-              </div>
-              <div class="mb-3">
-                <label for="editMensajeComunicado" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="editMensajeComunicado" rows="5"
-                  required>Se informa que la clase de matemáticas del día 20 de abril se cancela por temas de salud.</textarea>
-              </div>
-            </form>
+          <div class="mb-3">
+            <label for="editMensajeComunicado" class="form-label" style="font-family: 'Inter', sans-serif;">Mensaje</label>
+            <textarea class="form-control" id="editMensajeComunicado" rows="5" required style="font-family: 'Roboto', sans-serif;">Se informa que la clase de matemáticas del día 20 de abril se cancela por temas de salud.</textarea>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar Cambios</button>
-          </div>
-        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarCambios()" style="font-family: 'Inter', sans-serif;">Guardar Cambios</button>
       </div>
     </div>
+  </div>
+</div>
+
 
     <!-- Footer (igual que en tu referencia) -->
     <footer class="bg-white rounded shadow p-3 mt-4">
