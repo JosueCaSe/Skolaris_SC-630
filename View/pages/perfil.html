@@ -440,19 +440,15 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <h3 class="fs-5 fw-bold mb-0">MI PERFIL</h3>
+            <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Mi Perfil</h3>
             <div class="dropdown">
               <button class="btn btn-gray-800 btn-sm dropdown-toggle" type="button" id="actionsDropdown"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Acciones
               </button>
               <ul class="dropdown-menu" aria-labelledby="actionsDropdown">
-                <li><a class="dropdown-item" href="#" id="editPersonalInfo">Editar mi información</a></li>
-                <li><a class="dropdown-item" href="#" id="editFamilyInfo">Editar información de familiares</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-danger" href="inicio_sesion.html">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item" style="font-family: 'Roboto', sans-serif; font-weight: bold;" href="#" id="editPersonalInfo">Editar mi información</a></li>
+                <li><a class="dropdown-item" style="font-family: 'Roboto', sans-serif; font-weight: bold;" href="#" id="editFamilyInfo">Editar información de familiares</a></li>
               </ul>
             </div>
           </div>
@@ -460,80 +456,80 @@
 
             <!-- Información Personal (modo visualización) -->
             <div id="personalInfoView">
-              <h4 class="mb-4">Información Personal</h4>
-              <div class="row">
+              <h4 class="mb-4" style="font-family: 'Inter', sans-serif; font-weight: bold;">Información Personal</h4>
+              <div class="row" style="font-family: 'Roboto', sans-serif;">
                 <div class="col-md-6">
                   <div class="mb-3">
-                    <label class="form-label">Nombre</label>
+                    <label class="form-label" style="font-weight: bold;">Nombre</label>
                     <p class="form-control-static">Juan Carlos</p>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Apellidos</label>
+                    <label class="form-label" style="font-weight: bold;">Apellidos</label>
                     <p class="form-control-static">Pérez Rodríguez</p>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Cédula</label>
+                    <label class="form-label" style="font-weight: bold;">Cédula</label>
                     <p class="form-control-static">1-2345-6789</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="mb-3">
-                    <label class="form-label">Correo Electrónico</label>
+                    <label class="form-label" style="font-weight: bold;">Correo Electrónico</label>
                     <p class="form-control-static">juan.perez@example.com</p>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Fecha de Nacimiento</label>
+                    <label class="form-label" style="font-weight: bold;">Fecha de Nacimiento</label>
                     <p class="form-control-static">15/03/2015</p>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Edad</label>
+                    <label class="form-label" style="font-weight: bold;">Edad</label>
                     <p class="form-control-static">10 años</p>
                   </div>
                 </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Dirección</label>
+              <div class="mb-3" style="font-family: 'Roboto', sans-serif;">
+                <label class="form-label" style="font-weight: bold;">Dirección</label>
                 <p class="form-control-static">San José, 200 metros norte del Parque Central</p>
               </div>
               <div class="mb-3">
-                <label class="form-label">Grado</label>
+                <label class="form-label" style="font-weight: bold;">Grado</label>
                 <p class="form-control-static">Cuarto año</p>
               </div>
             </div>
 
             <!-- Información Personal (modo edición) -->
             <div id="personalInfoEdit" style="display: none;">
-              <h4 class="mb-4">Editar Información Personal</h4>
+              <h4 class="mb-4" style="font-family: 'Inter', sans-serif; font-weight: bold;">Editar Información Personal</h4>
               <form>
-                <div class="row">
+                <div class="row" style="font-family: 'Roboto', sans-serif;">
                   <div class="col-md-6">
                     <div class="mb-3">
-                      <label class="form-label">Nombre</label>
+                      <label class="form-label" style="font-weight: bold;">Nombre</label>
                       <input type="text" class="form-control" value="Juan Carlos">
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Apellidos</label>
+                      <label class="form-label" style="font-weight: bold;">Apellidos</label>
                       <input type="text" class="form-control" value="Pérez Rodríguez">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
-                      <label class="form-label">Correo Electrónico</label>
+                      <label class="form-label" style="font-weight: bold;">Correo Electrónico</label>
                       <input type="email" class="form-control" value="juan.perez@example.com">
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Fecha de Nacimiento</label>
+                      <label class="form-label" style="font-weight: bold;">Fecha de Nacimiento</label>
                       <input type="date" class="form-control" value="2005-03-15">
                     </div>
                   </div>
                 </div>
-                <div class="mb-3">
-                  <label class="form-label">Dirección</label>
+                <div class="mb-3" style="font-family: 'Roboto', sans-serif;">
+                  <label class="form-label" style="font-weight: bold;">Dirección</label>
                   <textarea class="form-control">San José, 200 metros norte del Parque Central</textarea>
                 </div>
                 <div class="d-flex justify-content-end">
-                  <button type="button" class="btn btn-secondary me-2" id="cancelPersonalEdit">Descartar</button>
-                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                  <button type="button" class="btn btn-primary me-2" id="cancelPersonalEdit">Descartar</button>
+                  <button type="submit" class="btn" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Confirmar</button>
                 </div>
               </form>
             </div>
@@ -542,16 +538,16 @@
 
             <!-- Información de Familiares (modo visualización) -->
             <div id="familyInfoView">
-              <h4 class="mb-4">Contactos de Emergencia</h4>
+              <h4 class="mb-4" style="font-family: 'Inter', sans-serif; font-weight: bold;">Contactos de Emergencia</h4>
               <div class="row">
                 <div class="col-md-6">
                   <div class="card mb-4">
                     <div class="card-body">
-                      <h5 class="card-title">María Rodríguez</h5>
-                      <p class="card-text">
-                        <strong>Parentesco:</strong> Madre<br>
-                        <strong>Teléfono:</strong> 8888-8888<br>
-                        <strong>Correo:</strong> maria.rodriguez@example.com
+                      <h5 class="card-title" style="font-family: 'Inter', sans-serif; font-weight: bold;">María Rodríguez</h5>
+                      <p class="card-text" style="font-family: 'Roboto', sans-serif;">
+                        <strong style="font-weight: bold;">Parentesco:</strong> Madre<br>
+                        <strong style="font-weight: bold;">Teléfono:</strong> 8888-8888<br>
+                        <strong style="font-weight: bold;">Correo:</strong> maria.rodriguez@example.com
                       </p>
                     </div>
                   </div>
@@ -559,11 +555,11 @@
                 <div class="col-md-6">
                   <div class="card mb-4">
                     <div class="card-body">
-                      <h5 class="card-title">Carlos Pérez</h5>
-                      <p class="card-text">
-                        <strong>Parentesco:</strong> Padre<br>
-                        <strong>Teléfono:</strong> 7777-7777<br>
-                        <strong>Correo:</strong> carlos.perez@example.com
+                      <h5 class="card-title" style="font-family: 'Inter', sans-serif; font-weight: bold;">Carlos Pérez</h5>
+                      <p class="card-text" style="font-family: 'Roboto', sans-serif;"s>
+                        <strong style="font-weight: bold;">Parentesco:</strong> Padre<br>
+                        <strong style="font-weight: bold;">Teléfono:</strong> 7777-7777<br>
+                        <strong style="font-weight: bold;">Correo:</strong> carlos.perez@example.com
                       </p>
                     </div>
                   </div>
@@ -573,31 +569,31 @@
 
             <!-- Información de Familiares (modo edición) -->
             <div id="familyInfoEdit" style="display: none;">
-              <h4 class="mb-4">Editar Contactos de Emergencia</h4>
+              <h4 class="mb-4" style="font-family: 'Inter', sans-serif; font-weight: bold;">Editar Contactos de Emergencia</h4>
               <form>
-                <div class="row">
+                <div class="row" style="font-family: 'Roboto', sans-serif;">
                   <div class="col-md-6">
                     <div class="card mb-4">
                       <div class="card-body">
-                        <h5 class="card-title">Contacto 1</h5>
+                        <h5 class="card-title" style="font-weight: bold;">Contacto 1</h5>
                         <div class="mb-3">
-                          <label class="form-label">Nombres</label>
+                          <label class="form-label" style="font-weight: bold;">Nombres</label>
                           <input type="text" class="form-control" value="María">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Apellidos</label>
+                          <label class="form-label" style="font-weight: bold;">Apellidos</label>
                           <input type="text" class="form-control" value="Rodríguez">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Correo Electrónico</label>
+                          <label class="form-label" style="font-weight: bold;">Correo Electrónico</label>
                           <input type="email" class="form-control" value="maria.rodriguez@example.com">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Número de Celular</label>
+                          <label class="form-label" style="font-weight: bold;">Número de Celular</label>
                           <input type="tel" class="form-control" value="8888-8888">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Parentesco</label>
+                          <label class="form-label" style="font-weight: bold;">Parentesco</label>
                           <input type="text" class="form-control" value="Madre">
                         </div>
                       </div>
@@ -606,25 +602,25 @@
                   <div class="col-md-6">
                     <div class="card mb-4">
                       <div class="card-body">
-                        <h5 class="card-title">Contacto 2</h5>
+                        <h5 class="card-title" style="font-weight: bold;">Contacto 2</h5>
                         <div class="mb-3">
-                          <label class="form-label">Nombres</label>
+                          <label class="form-label" style="font-weight: bold;">Nombres</label>
                           <input type="text" class="form-control" value="Carlos">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Apellidos</label>
+                          <label class="form-label" style="font-weight: bold;">Apellidos</label>
                           <input type="text" class="form-control" value="Pérez">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Correo Electrónico</label>
+                          <label class="form-label" style="font-weight: bold;">Correo Electrónico</label>
                           <input type="email" class="form-control" value="carlos.perez@example.com">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Número de Celular</label>
+                          <label class="form-label" style="font-weight: bold;">Número de Celular</label>
                           <input type="tel" class="form-control" value="7777-7777">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label">Parentesco</label>
+                          <label class="form-label" style="font-weight: bold;">Parentesco</label>
                           <input type="text" class="form-control" value="Padre">
                         </div>
                       </div>
@@ -632,8 +628,8 @@
                   </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                  <button type="button" class="btn btn-secondary me-2" id="cancelFamilyEdit">Descartar</button>
-                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                  <button type="button" class="btn btn-primary me-2" id="cancelFamilyEdit">Descartar</button>
+                  <button type="submit" class="btn" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Confirmar</button>
                 </div>
               </form>
             </div>

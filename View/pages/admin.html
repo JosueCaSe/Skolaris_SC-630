@@ -442,7 +442,7 @@
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col">
-                <h3 class="fs-5 fw-bold mb-0">Gestión de Usuarios</h3>
+                <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Gestión de Usuarios</h3>
               </div>
               <div class="col text-end">
                 <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#crearUsuarioModal">
@@ -457,7 +457,7 @@
             </div>
           </div>
           <div class="table-responsive">
-            <table class="table align-items-center table-flush">
+            <table class="table align-items-center table-flush text-center">
               <thead class="thead-light">
                 <tr>
                   <th class="border-bottom" scope="col">Cédula</th>
@@ -479,7 +479,7 @@
                     <span class="badge bg-primary">Administrador</span>
                   </td>
                   <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                    <button class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
                       Gestionar Roles
                     </button>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
@@ -494,10 +494,10 @@
                   <td class="fw-bold">González</td>
                   <td class="fw-bold">maria.gonzalez@example.com</td>
                   <td>
-                    <span class="badge bg-success">Docente</span>
+                    <span class="badge" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Docente</span>
                   </td>
                   <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                    <button class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
                       Gestionar Roles
                     </button>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
@@ -512,10 +512,10 @@
                   <td class="fw-bold">Rodríguez</td>
                   <td class="fw-bold">carlos.rodriguez@example.com</td>
                   <td>
-                    <span class="badge bg-warning">Estudiante</span>
+                    <span class="badge" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Estudiante</span>
                   </td>
                   <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                    <button class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
                       Gestionar Roles
                     </button>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
@@ -530,11 +530,11 @@
                   <td class="fw-bold">Martínez</td>
                   <td class="fw-bold">ana.martinez@example.com</td>
                   <td>
-                    <span class="badge bg-success">Docente</span>
+                    <span class="badge" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Docente</span>
                     <span class="badge bg-secondary">Tutor</span>
                   </td>
                   <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                    <button class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
                       Gestionar Roles
                     </button>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
@@ -549,10 +549,10 @@
                   <td class="fw-bold">Hernández</td>
                   <td class="fw-bold">luis.hernandez@example.com</td>
                   <td>
-                    <span class="badge bg-warning">Estudiante</span>
+                    <span class="badge" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Estudiante</span>
                   </td>
                   <td>
-                    <button class="btn btn-sm btn-info me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
+                    <button class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#gestionRolesModal">
                       Gestionar Roles
                     </button>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
@@ -573,29 +573,29 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="crearUsuarioModalLabel">Crear Nuevo Usuario</h5>
+            <h5 class="modal-title" id="crearUsuarioModalLabel" style="font-family: 'Inter', sans-serif; font-weight: bold;">Crear Nuevo Usuario</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="font-family: 'Roboto', sans-serif;">
             <form id="formCrearUsuario">
               <div class="form-group mb-3">
-                <label for="cedula">Cédula</label>
+                <label for="cedula" style="font-weight: bold;">Cédula</label>
                 <input type="text" class="form-control" id="cedula" placeholder="Ingrese la cédula">
               </div>
               <div class="form-group mb-3">
-                <label for="nombre">Nombre</label>
+                <label for="nombre" style="font-weight: bold;">Nombre</label>
                 <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre">
               </div>
               <div class="form-group mb-3">
-                <label for="apellido">Apellido</label>
+                <label for="apellido" style="font-weight: bold;">Apellido</label>
                 <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido">
               </div>
               <div class="form-group mb-3">
-                <label for="email">Correo Electrónico</label>
+                <label for="email" style="font-weight: bold;">Correo Electrónico</label>
                 <input type="email" class="form-control" id="email" placeholder="Ingrese el correo electrónico">
               </div>
               <div class="form-group mb-3">
-                <label>Roles</label>
+                <label style="font-weight: bold;">Roles</label>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="rolAdmin">
                   <label class="form-check-label" for="rolAdmin">
@@ -624,8 +624,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="btnConfirmarCrear">Confirmar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;" id="btnConfirmarCrear">Confirmar</button>
           </div>
         </div>
       </div>
@@ -637,16 +637,16 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="gestionRolesModalLabel">Gestionar Roles de Usuario</h5>
+            <h5 class="modal-title" id="gestionRolesModalLabel" style="font-family: 'Inter', sans-serif; font-weight: bold;">Gestionar Roles de Usuario</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="font-family: 'Roboto', sans-serif;">
             <form id="formGestionRoles">
               <div class="mb-3">
-                <label class="form-label">Usuario: <strong>Juan Pérez (1-2345-6789)</strong></label>
+                <label class="form-label" style="font-weight: bold;">Usuario: <strong>Juan Pérez (1-2345-6789)</strong></label>
               </div>
               <div class="form-group mb-3">
-                <label>Roles Actuales</label>
+                <label style="font-weight: bold;">Roles Actuales</label>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="editRolAdmin" checked>
                   <label class="form-check-label" for="editRolAdmin">
@@ -675,8 +675,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
-            <button type="button" class="btn btn-primary" id="btnConfirmarRoles">Confirmar Cambios</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Descartar</button>
+            <button type="button" class="btn" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;" id="btnConfirmarRoles">Confirmar Cambios</button>
           </div>
         </div>
       </div>
@@ -688,15 +688,15 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="eliminarUsuarioModalLabel">Eliminar Usuario</h5>
+            <h5 class="modal-title" id="eliminarUsuarioModalLabel" style="font-family: 'Inter', sans-serif; font-weight: bold;">Eliminar Usuario</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>¿Estás seguro que deseas eliminar al usuario <strong>Juan Pérez (1-2345-6789)</strong>?</p>
-            <p class="text-danger">Esta acción no se puede deshacer.</p>
+            <p style="font-family: 'Roboto', sans-serif;">¿Estás seguro que deseas eliminar al usuario <strong>Juan Pérez (1-2345-6789)</strong>?</p>
+            <p class="text-danger" style="font-family: 'Roboto', sans-serif;">Esta acción no se puede deshacer.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
             <button type="button" class="btn btn-danger" id="btnConfirmarEliminar">Confirmar Eliminación</button>
           </div>
         </div>

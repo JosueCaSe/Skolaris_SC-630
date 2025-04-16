@@ -419,7 +419,7 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <h3 class="fs-5 fw-bold mb-0">GESTIÓN DE EVENTOS</h3>
+            <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Gestión de Actividades</h3>
             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createEventModal">
               <svg class="icon icon-xs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -429,9 +429,9 @@
           </div>
           <div class="card-body">
             <!-- Listado de eventos del docente -->
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
+            <div class="table-responsive ">
+              <table class="table table-hover text-center">
+                <thead class="thead-light text-center">
                   <tr>
                     <th>Título</th>
                     <th>Fecha de Creación</th>
@@ -447,10 +447,10 @@
                     <td>24/10/2023</td>
                     <td>5</td>
                     <td>
-                      <button class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="1">
+                      <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="1">
                         Modificar
                       </button>
-                      <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="1">
+                      <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="1">
                         Eliminar
                       </button>
                     </td>
@@ -461,10 +461,10 @@
                     <td>31/10/2023</td>
                     <td>12</td>
                     <td>
-                      <button class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="2">
+                      <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="2">
                         Modificar
                       </button>
-                      <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="2">
+                      <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="2">
                         Eliminar
                       </button>
                     </td>
@@ -475,10 +475,10 @@
                     <td>05/11/2023</td>
                     <td>8</td>
                     <td>
-                      <button class="btn btn-sm btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="3">
+                      <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event-id="3">
                         Modificar
                       </button>
-                      <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="3">
+                      <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal" data-event-id="3">
                         Eliminar
                       </button>
                     </td>
@@ -496,28 +496,28 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="createEventModalLabel">Crear Nuevo Evento</h5>
+            <h5 class="modal-title" id="createEventModalLabel" style="font-family: 'Inter', sans-serif;">Crear Nuevo Evento</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="createEventForm">
               <div class="mb-3">
-                <label for="eventTitle" class="form-label">Título</label>
+                <label for="eventTitle" class="form-label" style="font-family: 'Roboto', sans-serif;">Título</label>
                 <input type="text" class="form-control" id="eventTitle" required>
               </div>
               <div class="mb-3">
-                <label for="eventDescription" class="form-label">Descripción</label>
+                <label for="eventDescription" class="form-label" style="font-family: 'Roboto', sans-serif;">Descripción</label>
                 <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
               </div>
               <div class="mb-3">
-                <label for="eventDate" class="form-label">Fecha del Evento</label>
+                <label for="eventDate" class="form-label" style="font-family: 'Roboto', sans-serif;">Fecha del Evento</label>
                 <input type="date" class="form-control" id="eventDate" required>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="confirmCreate">Confirmar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;" id="confirmCreate">Confirmar</button>
           </div>
         </div>
       </div>
@@ -528,28 +528,28 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editEventModalLabel">Modificar Evento</h5>
+            <h5 class="modal-title" id="editEventModalLabel" style="font-family: 'Inter', sans-serif;">Modificar Evento</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="editEventForm">
               <div class="mb-3">
-                <label for="editEventTitle" class="form-label">Título</label>
+                <label for="editEventTitle" class="form-label" style="font-family: 'Roboto', sans-serif;">Título</label>
                 <input type="text" class="form-control" id="editEventTitle" required>
               </div>
               <div class="mb-3">
-                <label for="editEventDescription" class="form-label">Descripción</label>
+                <label for="editEventDescription" class="form-label" style="font-family: 'Roboto', sans-serif;">Descripción</label>
                 <textarea class="form-control" id="editEventDescription" rows="3" required></textarea>
               </div>
               <div class="mb-3">
-                <label for="editEventDate" class="form-label">Fecha del Evento</label>
+                <label for="editEventDate" class="form-label" style="font-family: 'Roboto', sans-serif;">Fecha del Evento</label>
                 <input type="date" class="form-control" id="editEventDate" required>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="confirmEdit">Guardar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;" id="confirmEdit">Guardar</button>
           </div>
         </div>
       </div>

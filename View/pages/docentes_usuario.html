@@ -440,18 +440,18 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">DOCENTE - USUARIO</h3>
+            <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Docentes de la Institución</h3>
           </div>
           <div class="card-body">
 
-            <div id="filtros">
+            <div id="filtros" style="font-family: 'Roboto', sans-serif;">
               <select id="filtroMateria">
                 <option value="">Todas las materias</option>
                 <option value="Matemáticas">Matemáticas</option>
                 <option value="Lengua">Lengua</option>
                 <option value="Inglés">Inglés</option>
               </select>
-              <button class="btn btn-primary" onclick="filtrarDocentes()">Confirmar</button>
+              <button class="btn btn-primary" style="font-family: 'Inter', sans-serif;" onclick="filtrarDocentes()">Confirmar</button>
             </div>
 
             <div id="listaDocentes"></div>
@@ -559,9 +559,9 @@
         const card = document.createElement("div");
         card.className = "docente";
         card.innerHTML = `
-          <strong>${docente.nombre} ${docente.apellidos}</strong><br>
+          <strong>${docente.nombre} ${docente.apellidos}</strong><br style="font-family: 'Roboto', sans-serif;">
           ${docente.correo} - ${docente.materia}<br>
-          <button class="btn btn-primary" onclick="verMas(${index})">Ver más</button>
+          <button class="btn mt-2" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;" onclick="verMas(${index})">Ver más</button>
         `;
         contenedor.appendChild(card);
       });
@@ -580,12 +580,12 @@
     function verMas(index) {
       const docente = docentes[index];
       const detalle = `
-        <h2>Información del Docente</h2>
-        <p><strong>Nombre:</strong> ${docente.nombre} ${docente.apellidos}</p>
-        <p><strong>Correo:</strong> ${docente.correo}</p>
-        <p><strong>Celular:</strong> ${docente.celular}</p>
-        <p><strong>Materia:</strong> ${docente.materia}</p>
-        <p><strong>Ingreso:</strong> ${docente.ingreso}</p>
+        <h2 style="font-family: 'Inter', sans-serif;" >Información del Docente</h2>
+        <p style="font-family: 'Roboto', sans-serif;"><strong>Nombre:</strong> ${docente.nombre} ${docente.apellidos}</p>
+        <p style="font-family: 'Roboto', sans-serif;"><strong>Correo:</strong> ${docente.correo}</p>
+        <p style="font-family: 'Roboto', sans-serif;"><strong>Celular:</strong> ${docente.celular}</p>
+        <p style="font-family: 'Roboto', sans-serif;"><strong>Materia:</strong> ${docente.materia}</p>
+        <p style="font-family: 'Roboto', sans-serif;"><strong>Ingreso:</strong> ${docente.ingreso}</p>
       `;
       document.getElementById("detalleDocente").innerHTML = detalle;
       document.getElementById("modal").style.display = "block";

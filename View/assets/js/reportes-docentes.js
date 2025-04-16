@@ -50,13 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>${group.name}</td>
         <td class="text-center">
           <button 
-            class="btn btn-outline-primary btn-sm me-2" 
+            class="btn" 
+            style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;"
             data-id="${group.id}" 
             data-type="calificaciones">
             Calificaciones
           </button>
           <button 
-            class="btn btn-outline-secondary btn-sm" 
+            class="btn" 
+            style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;"
             data-id="${group.id}" 
             data-type="asistencias">
             Asistencias

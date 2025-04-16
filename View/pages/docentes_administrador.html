@@ -439,7 +439,7 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">DOCENTE - ADMINISTRADOR</h3>
+            <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Docentes de la Institución</h3>
           </div>
           <div class="card-body">
 
@@ -501,18 +501,18 @@
                   card.className = "docente mb-4";
                   card.innerHTML = `
                     <strong>${docente.nombre} ${docente.apellidos}</strong><br>
-                    <small>${docente.correo} - ${docente.materia} - <em>${docente.estado}</em></small><br>
-                    <div>Horarios: 
+                    <small style="font-family: 'Roboto', sans-serif;">${docente.correo} - ${docente.materia} - <em>${docente.estado}</em></small><br>
+                    <div class="mt-1" style="font-family: 'Roboto', sans-serif;">Horarios: 
                       ${docente.horarios.length > 0 ? docente.horarios.map((h, i) => `
                         <div class="d-flex align-items-center gap-2 mb-1">
                           <span class="horario-tag">${h}</span>
-                          <button class="btn btn-sm btn-primary" onclick="abrirAccion('modificar', ${index}, ${i})">Modificar</button>
-                          <button class="btn btn-sm btn-danger" onclick="abrirAccion('eliminar', ${index}, ${i})">Eliminar</button>
+                          <button class="btn btn-primary mt-2" style="font-family: 'Inter', sans-serif;" onclick="abrirAccion('modificar', ${index}, ${i})">Modificar</button>
+                          <button class="btn btn-sm btn-danger" style="font-family: 'Inter', sans-serif;" onclick="abrirAccion('eliminar', ${index}, ${i})">Eliminar</button>
                         </div>
                       `).join('') : 'Sin horarios'}
                     </div>
-                    <button class="btn btn-primary mt-2" onclick="verMas(${index})">Ver Más</button>
-                    <button class="btn btn-primary mt-2" onclick="abrirAccion('asignar', ${index})">Asignar nuevo horario</button>
+                    <button class="btn mt-2" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;" onclick="verMas(${index})">Ver Más</button>
+                    <button class="btn btn-primary mt-2" style="font-family: 'Inter', sans-serif;" onclick="abrirAccion('asignar', ${index})">Asignar nuevo horario</button>
                   `;
                   contenedor.appendChild(card);
                 });
@@ -521,14 +521,14 @@
               function verMas(index) {
                 const d = docentes[index];
                 document.getElementById("detalleDocente").innerHTML = `
-                  <h4>Información del Docente</h4>
-                  <p><strong>Nombre:</strong> ${d.nombre} ${d.apellidos}</p>
-                  <p><strong>Correo:</strong> ${d.correo}</p>
-                  <p><strong>Celular:</strong> ${d.celular}</p>
-                  <p><strong>Materia:</strong> ${d.materia}</p>
-                  <p><strong>Ingreso:</strong> ${d.ingreso}</p>
-                  <p><strong>Estado:</strong> ${d.estado}</p>
-                  <p><strong>Horarios:</strong> ${d.horarios.map(h => `<span class="horario-tag">${h}</span>`).join(' ') || 'Sin horarios asignados'}</p>
+                  <h4 style="font-family: 'Inter', sans-serif;">Información del Docente</h4>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Nombre:</strong> ${d.nombre} ${d.apellidos}</p>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Correo:</strong> ${d.correo}</p>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Celular:</strong> ${d.celular}</p>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Materia:</strong> ${d.materia}</p>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Ingreso:</strong> ${d.ingreso}</p>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Estado:</strong> ${d.estado}</p>
+                  <p style="font-family: 'Roboto', sans-serif;"><strong>Horarios:</strong> ${d.horarios.map(h => `<span class="horario-tag">${h}</span>`).join(' ') || 'Sin horarios asignados'}</p>
                 `;
                 document.getElementById("modalInfo").style.display = "flex";
               }
@@ -544,17 +544,17 @@
 
                 if (tipo === "modificar") {
                   contenido = `
-                    <p>Horario actual: <strong>${d.horarios[horarioIndex]}</strong></p>
+                    <p style="font-family: 'Roboto', sans-serif;">Horario actual: <strong>${d.horarios[horarioIndex]}</strong></p>
                     <input type="text" id="nuevoValor" placeholder="Nuevo horario (Ej: Martes 2pm)" />
                   `;
                 } else if (tipo === "asignar") {
                   contenido = `
-                    <p>Asignar nuevo horario:</p>
+                    <p style="font-family: 'Roboto', sans-serif;">Asignar nuevo horario:</p>
                     <input type="text" id="nuevoValor" placeholder="Ej: Jueves 9am" />
                   `;
                 } else if (tipo === "eliminar") {
                   contenido = `
-                    <p>¿Seguro que deseas eliminar este horario?</p>
+                    <p style="font-family: 'Roboto', sans-serif;">¿Seguro que deseas eliminar este horario?</p>
                     <strong>${d.horarios[horarioIndex]}</strong>
                   `;
                 }

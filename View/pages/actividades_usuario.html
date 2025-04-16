@@ -440,13 +440,13 @@
       <div class="col-12">
         <div class="card border-0 shadow">
           <div class="card-header">
-            <h3 class="fs-5 fw-bold mb-0">CALENDARIO DE ACTIVIDADES</h3>
+            <h3 class="fs-5 mb-0" style="font-family: 'Poppins', sans-serif; font-weight: bold;">Calendario de Actividades</h3>
           </div>
           <div class="card-body">
             <!-- Calendario de eventos -->
             <div class="calendar-container mb-4">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="mb-0">Octubre 2023</h4>
+                <h4 class="mb-0" style="font-family: 'Inter', sans-serif;">Octubre 2023</h4>
                 <div>
                   <button class="btn btn-sm btn-outline-primary me-2"></button>
                   <button class="btn btn-sm btn-outline-primary">></button>
@@ -455,7 +455,7 @@
 
               <div class="table-responsive">
                 <table class="table table-bordered text-center">
-                  <thead>
+                  <thead class="thead-light text-center">
                     <tr>
                       <th>Dom</th>
                       <th>Lun</th>
@@ -502,7 +502,7 @@
                           <div>24</div>
                           <div class="event-badge" data-bs-toggle="modal" data-bs-target="#eventModal"
                             data-event-id="1">
-                            <span class="badge bg-primary">Feria Científica (5)</span>
+                            <span class="badge" style="background-color: #EC5832; border-color: #EC5832; font-family: 'Inter', sans-serif; color: white;">Feria Científica (5)</span>
                           </div>
                         </div>
                       </td>
@@ -519,7 +519,7 @@
                           <div>31</div>
                           <div class="event-badge" data-bs-toggle="modal" data-bs-target="#eventModal"
                             data-event-id="2">
-                            <span class="badge bg-success">Excursión (12)</span>
+                            <span class="badge" style="background-color: #8ABD3C; border-color: #8ABD3C; font-family: 'Inter', sans-serif; color: white;">Excursión (12)</span>
                           </div>
                         </div>
                       </td>
@@ -535,12 +535,12 @@
 
             <!-- Próximos eventos -->
             <div class="upcoming-events">
-              <h5 class="mb-3">Próximos Eventos</h5>
-              <div class="list-group">
+              <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">Próximos Eventos</h5>
+              <div class="list-group" style="font-family: 'Roboto', sans-serif;">
                 <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal"
                   data-bs-target="#eventModal" data-event-id="1">
                   <div class="d-flex w-100 justify-content-between">
-                    <h6 class="mb-1">Feria Científica</h6>
+                    <h6 class="mb-1" >Feria Científica</h6>
                     <small class="text-muted">24 Oct 2023</small>
                   </div>
                   <p class="mb-1">Participantes: 5</p>
@@ -565,21 +565,21 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="eventModalLabel">Detalles del Evento</h5>
+            <h5 class="modal-title" id="eventModalLabel" style="font-family: 'Inter', sans-serif;">Detalles del Evento</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h4 id="eventTitle">Feria Científica</h4>
-            <p><strong>Fecha:</strong> <span id="eventDate">24 de Octubre, 2023</span></p>
-            <p><strong>Organizador:</strong> <span id="eventOrganizer">Prof. María Rodríguez</span></p>
-            <p><strong>Participantes:</strong> <span id="eventParticipants">5</span></p>
+            <h4 id="eventTitle" style="font-family: 'Inter', sans-serif;">Feria Científica</h4>
+            <p style="font-family: 'Roboto', sans-serif;"><strong>Fecha:</strong> <span id="eventDate">24 de Octubre, 2023</span></p>
+            <p style="font-family: 'Roboto', sans-serif;"><strong>Organizador:</strong> <span id="eventOrganizer">Prof. María Rodríguez</span></p>
+            <p style="font-family: 'Roboto', sans-serif;"><strong>Participantes:</strong> <span id="eventParticipants">5</span></p>
             <hr>
-            <p id="eventDescription">La feria científica anual donde los estudiantes presentarán sus proyectos de
+            <p id="eventDescription" style="font-family: 'Roboto', sans-serif;">La feria científica anual donde los estudiantes presentarán sus proyectos de
               investigación. Todos los padres y estudiantes están invitados a asistir.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" id="attendanceBtn">Asisto (No)</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
